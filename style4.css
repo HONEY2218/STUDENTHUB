@@ -1,0 +1,532 @@
+/*==================================================
+            STUDENTHUB THEME (PRACTICAL 3)
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Segoe UI',Tahoma,sans-serif;
+    background:#F4F6F9;
+    color:#333;
+}
+
+/*==================== CONTAINER ====================*/
+
+/* [BOOTSTRAP OVERRIDE]: Customizing Bootstrap's standard .container width and max-width */
+.container{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/*==================================================
+              HEADER - FLEXBOX
+==================================================*/
+
+/* [FLEXBOX]: Header layout uses Flexbox for vertical centering */
+header {
+    background: linear-gradient(135deg, #182E5A, #1F3B73);
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+    border-bottom: 4px solid #2098D1;
+    position: relative;
+}
+
+/*==================== TOP FLEXBOX ====================*/
+
+/* [FLEXBOX]: Spreads child elements across the horizontal space */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/*==================== LOGO & MAIN TITLE FLEXBOX ====================*/
+
+/* [FLEXBOX]: Aligns logo image and title text inline with defined spacing */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    background: white;
+    padding: 8px;
+    margin-right: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .30);
+    border: 3px solid #2098D1;
+    transition: transform .35s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.logo h1 {
+    font-size: 68px;
+    color: #FFFFFF;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, .35);
+    line-height: 1.1;
+}
+
+.logo h3 {
+    margin-top: 10px;
+    color: #E0E9F8;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+}
+
+/*==================================================
+               NAVIGATION - FLEXBOX
+==================================================*/
+
+.nav-section{
+    background:#294B8A;
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+}
+
+/* [FLEXBOX]: Centers menu items with wrapping enabled for smaller screens */
+nav{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    padding:15px 0;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    padding:10px 16px;
+    font-size:16px;
+    font-weight:600;
+    border-radius:5px;
+    transition:.3s;
+}
+
+nav a:hover{
+    background:#3F79D6;
+}
+
+/*==================================================
+         MAIN • CARDS • TITLES • CONTENT
+==================================================*/
+
+main{
+    width:92%;
+    max-width:1400px;
+    margin:35px auto;
+}
+
+/*==================== FULL WIDTH SLIDER ====================*/
+
+/* [BOOTSTRAP CAROUSEL STYLING]: Customizing Bootstrap Carousel component dimensions */
+.custom-slider {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.carousel-item {
+    height: 420px;
+    background-color: #e0e0e0;
+}
+
+.slider-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/*==================== CARD ====================*/
+
+/* [BOOTSTRAP CARD OVERRIDE]: Custom styling for Bootstrap Card component */
+.card{
+    background:white;
+    border-radius:10px;
+    margin-bottom:30px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+    border:1px solid #E3E8EF;
+}
+
+.card h2{
+    background:#2098D1;
+    color:white;
+    font-size:28px;
+    font-weight:600;
+    padding:18px 25px;
+    margin:0;
+    border:none;
+}
+
+.card p,
+.card address,
+.card ul,
+.card ol{
+    padding:25px;
+    font-size:18px;
+    line-height:1.8;
+    color:#1d1a1a;
+}
+
+/*==================== CONTACT CARD ====================*/
+
+.contact-card {
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.contact-card h2 {
+    margin: 0 !important;
+    padding: 8px 15px !important;
+    font-size: 18px !important;
+}
+
+.contact-info {
+    padding: 10px 15px !important;
+}
+
+.contact-info h3 {
+    margin: 0 0 4px 0 !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    color: #1F3B73 !important;
+}
+
+.contact-info p {
+    margin: 2px 0 !important;
+    padding: 0 !important;
+    font-size: 14px !important;
+    color: #333 !important;
+    line-height: 1.2 !important;
+}
+
+/*==================== WELCOME SECTION ====================*/
+
+.welcome-box{
+    background:white;
+    border-left:6px solid #2098D1;
+    padding:35px;
+    border-radius:10px;
+    margin-bottom:30px;
+    box-shadow:0 4px 12px rgba(0,0,0,.10);
+}
+
+.welcome-box h2{
+    color:#1F3B73;
+    background:none;
+    padding:0;
+    font-size:42px;
+    margin-bottom:18px;
+}
+
+.welcome-box p{
+    padding:0;
+    font-size:20px;
+    color:#555;
+}
+
+/*==================================================
+              ROW - FLEXBOX (GRID LAYOUT)
+==================================================*/
+
+/* [BOOTSTRAP GRID / FLEXBOX]: Re-defining Bootstrap .row to use Flexbox as a flexible Grid system */
+.row{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* [FLEXBOX GRID COLUMNS]: Flex-grow creates automatic responsive grid columns (Min width 300px) */
+.row .card{
+    flex: 1;
+    min-width: 300px;
+}
+
+/*==================== SECTION SPACING ====================*/
+
+section{
+    margin-bottom:35px;
+}
+
+h3{
+    color:#1F3B73;
+    margin-bottom:15px;
+}
+
+hr{
+    border:none;
+    border-top:1px solid #D8DEE8;
+    margin:30px 0;
+}
+
+a{
+    transition:.3s;
+}
+
+a:hover{
+    text-decoration:none;
+}
+
+address{
+    font-style:normal;
+    line-height:2;
+}
+
+/*==================== BUTTONS ====================*/
+
+/* [BOOTSTRAP BUTTON OVERRIDE]: Custom styles for Bootstrap button classes */
+button{
+    font-family:'Segoe UI',sans-serif;
+    cursor:pointer;
+    transition:.3s;
+    border:none;
+    outline:none;
+}
+
+.btn{
+    background:#2098D1;
+    color:white;
+    padding:12px 25px;
+    border-radius:6px;
+    display:inline-block;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#1B7FB0;
+}
+
+/*==================================================
+        FORMS • INPUTS • LOGIN • REGISTER
+==================================================*/
+
+form {
+    width: 100%;
+    padding: 25px; 
+}
+
+label{
+    display:block;
+    margin-top:18px;
+    margin-bottom:8px;
+    font-size:16px;
+    font-weight:600;
+    color:#1F3B73;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number],
+input[type=date],
+input[type=tel],
+input[type=file],
+select,
+textarea{
+    width:100%;
+    padding:14px 16px;
+    border:1px solid #C8D3E0;
+    border-radius:6px;
+    font-size:16px;
+    background:white;
+    transition:.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+    outline:none;
+    border-color:#2098D1;
+    box-shadow:0 0 8px rgba(32,152,209,.25);
+}
+
+textarea{
+    resize:vertical;
+    min-height:120px;
+}
+
+::placeholder{
+    color:#999;
+}
+
+input[type=radio],
+input[type=checkbox]{
+    margin-right:8px;
+    transform:scale(1.15);
+    accent-color:#2098D1;
+}
+
+input[type=submit],
+input[type=reset]{
+    background:#2098D1;
+    color:white;
+    border:none;
+    padding:14px 30px;
+    border-radius:6px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    margin-top:25px;
+    margin-right:10px;
+    transition:.3s;
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover{
+    background:#1B7FB0;
+    transform:translateY(-2px);
+    box-shadow:0 5px 12px rgba(0,0,0,.15);
+}
+
+/*==================================================
+              TABLES • RESULT • FEES
+==================================================*/
+
+/* [BOOTSTRAP TABLE STYLING]: Customizing data tables for responsive web views */
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:25px;
+    background:white;
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+    border-radius:8px;
+    overflow:hidden;
+}
+
+th{
+    background:#1F3B73;
+    color:white;
+    padding:16px;
+    font-size:16px;
+    font-weight:600;
+    text-align:center;
+    border-bottom:1px solid rgba(255, 255, 255, 0.2);
+}
+
+td{
+    padding:14px;
+    border-bottom:1px solid #E2E8F0;
+    text-align:center;
+    font-size:15px;
+}
+
+tr:nth-child(even){
+    background:#F7FAFC;
+}
+
+tr:hover{
+    background:#E8F4FF;
+}
+
+.table-container{
+    overflow-x:auto;
+}
+
+/*==================================================
+                    FOOTER-FLEXBOX
+==================================================*/
+
+footer {
+    background: #182E5A;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 45px 20px;
+    margin-top: 50px;
+    width: 100%;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* [FLEXBOX]: Centers footer content vertically using column direction */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+}
+
+.footer-content p {
+    font-size: 16px;
+    color: #D8E2F2;
+    margin: 4px 0;
+}
+
+.footer-content .email {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #E0E9F8;
+}
+
+.footer-content .copyright {
+    font-size: 14px;
+    color: #A0B2D6;
+}
+
+/*==================================================
+        RESPONSIVE MEDIA QUERIES (FLEXBOX ADAPTATION)
+==================================================*/
+
+/* [FLEXBOX RESPONSIVE]: Changes flex directions to column for smaller screen sizes */
+@media (max-width:992px){
+    .top{ flex-direction:column; text-align:center; }
+    .logo{ justify-content:center; margin-bottom:20px; }
+    .logo img{ margin-right:0; margin-bottom:10px; }
+    nav{ flex-wrap:wrap; justify-content:center; }
+    nav a{ font-size:15px; padding:8px 12px; }
+}
+
+@media (max-width:768px){
+    header { padding: 25px 0; }
+    .logo h1{ font-size:38px; }
+    .logo h3{ font-size:18px; }
+    .logo img{ width:85px; height:85px; }
+    .card{ margin-bottom:20px; }
+    .card h2{ font-size:22px; }
+    .carousel-item { height: 260px; }
+}
+
+@media (max-width:480px){
+    .container{ width:96%; }
+    .logo h1{ font-size:28px; }
+    .logo h3{ font-size:16px; }
+    .card{ padding:18px; }
+    .card h2{ font-size:20px; }
+    .carousel-item { height: 200px; }
+}
