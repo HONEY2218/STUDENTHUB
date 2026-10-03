@@ -5,143 +5,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub | Fees</title>
+    <link rel="stylesheet" href="style4.css">
 </head>
 
 <body>
 
-<header>
+    <!-- ===============================
+            HEADER
+    ================================ -->
 
-<table width="100%">
-<tr>
+    <header>
+        <div class="container">
+            <div class="top">
+                <div class="logo">
+                    <img src="image.jpg" alt="StudentHub Logo">
+                    <div>
+                        <h1>StudentHub</h1>
+                        <h3>Student Management Portal</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<td width="15%">
-<img src="studenthubLOGO.jpg" alt="StudentHub Logo" width="100">
-</td>
+    <!-- Navigation Section -->
 
-<td>
-<h1>StudentHub</h1>
-<h3>Student Fees</h3>
-</td>
+    <div class="nav-section">
+        <div class="container">
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="event.html">Events</a>
+                <a href="fees.html">Fees</a>
+                <a href="result.html">Result</a>
+                <a href="FAQ.html">FAQ</a>
+                <a href="logout.html">Logout</a>
+            </nav>
+        </div>
+    </div>
 
-</tr>
-</table>
+    <!-- Main Content -->
 
-<hr>
+    <main>
 
-        <nav>
-            <a href="home.html">Home</a> |
-            <a href="about.html">About</a> |
-            <a href="register.html">Register</a> |
-            <a href="login.html">Login</a> |
-            <a href="dashboard.html">Dashboard</a> |
-            <a href="profile.html">Profile</a> |
-            <a href="event.html">Events</a> |
-            <a href="fees.html">Fees</a> |
-            <a href="result.html">Result</a> |
-            <a href="logout.html">Logout</a>
-        </nav>
+        <div class="card">
+            <h2>Fee Details</h2>
+            <div class="table-container">
+                <table>
+                    <tr>
+                        <th>Semester</th>
+                        <th>Total Fees</th>
+                        <th>Paid Amount</th>
+                        <th>Balance</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td>Semester 1</td>
+                        <td>₹45,000</td>
+                        <td>₹45,000</td>
+                        <td>₹0</td>
+                        <td class="paid">Paid</td>
+                    </tr>
+                    <tr>
+                        <td>Semester 2</td>
+                        <td>₹45,000</td>
+                        <td>₹20,000</td>
+                        <td>₹25,000</td>
+                        <td class="pending">Pending</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
 
-<hr>
+        <div class="row">
+            <div class="card">
+                <h2>Payment Information</h2>
+                <ul>
+                    <li>Payment Mode : Online / Offline</li>
+                    <li>Payment Due Date : 30 August 2026</li>
+                    <li>Late Fee : ₹500 after the due date</li>
+                </ul>
+            </div>
 
-</header>
+            <div class="card">
+                <h2>Important Instructions</h2>
+                <ol>
+                    <li>Pay your fees before the due date.</li>
+                    <li>Keep the payment receipt for future reference.</li>
+                    <li>Contact the accounts office for any payment issues.</li>
+                </ol>
+            </div>
+        </div>
 
-<main>
+        <div class="card contact-card">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <h3>StudentHub Portal</h3>
+                <p>📧 Email : studenthub@gmail.com</p>
+                <p>📞 Phone : +91 9876543210</p>
+                <p>📍 Address : CHARUSAT Campus, Changa, Gujarat 388421</p>
+            </div>
+        </div>
 
-<section>
+    </main>
 
-<h2>Fee Details</h2>
+    <!-- Footer -->
 
-<table border="1" cellpadding="8">
-
-<tr>
-<th>Semester</th>
-<th>Total Fees</th>
-<th>Paid Amount</th>
-<th>Balance</th>
-<th>Status</th>
-</tr>
-
-<tr>
-<td>Semester 1</td>
-<td>₹45,000</td>
-<td>₹45,000</td>
-<td>₹0</td>
-<td>Paid</td>
-</tr>
-
-<tr>
-<td>Semester 2</td>
-<td>₹45,000</td>
-<td>₹20,000</td>
-<td>₹25,000</td>
-<td>Pending</td>
-</tr>
-
-</table>
-
-</section>
-
-<hr>
-
-<section>
-
-<h2>Payment Information</h2>
-
-<ul>
-
-<li>Payment Mode : Online / Offline</li>
-
-<li>Payment Due Date : 30 August 2026</li>
-
-<li>Late Fee : ₹500 after the due date</li>
-
-</ul>
-
-</section>
-
-<hr>
-
-<section>
-
-<h2>Important Instructions</h2>
-
-<ol>
-
-<li>Pay your fees before the due date.</li>
-
-<li>Keep the payment receipt for future reference.</li>
-
-<li>Contact the accounts office for any payment issues.</li>
-
-</ol>
-
-</section>
-
-<hr>
-
-<section>
-
-<h2>Accounts Office</h2>
-
-<p><strong>Email :</strong> accounts@studenthub.com</p>
-
-<p><strong>Phone :</strong> +91 9876x4xxxx</p>
-
-<p><strong>Office Hours :</strong> Monday to Friday, 9:00 AM - 5:00 PM</p>
-
-</section>
-
-</main>
-
-<hr>
-
-<footer>
-
-<p><strong>StudentHub Portal</strong></p>
-
-<p>&copy; 2026 StudentHub. All Rights Reserved.</p>
-
-</footer>
+    <footer>
+        <div class="footer-content">
+            <h2>StudentHub Portal</h2>
+            <p>Empowering Students Through Technology</p>
+            <p class="email">Email : studenthub@gmail.com</p>
+            <p class="copyright">&copy; 2026 StudentHub. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 

@@ -5,151 +5,147 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub | Register</title>
+    <link rel="stylesheet" href="style4.css">
 </head>
 
 <body>
 
-<header>
+    <!-- ===============================
+            HEADER
+    ================================ -->
 
-<table width="100%">
-<tr>
+    <header>
+        <div class="container">
+            <div class="top">
+                <div class="logo">
+                    <img src="image.jpg" alt="StudentHub Logo">
+                    <div>
+                        <h1>StudentHub</h1>
+                        <h3>Student Management Portal</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-<td width="15%">
-<img src="studenthubLOGO.jpg" alt="StudentHub Logo" width="100">
-</td>
+    <!-- Navigation Section -->
 
-<td>
-<h1>StudentHub</h1>
-<h3>Student Registration</h3>
-</td>
+    <div class="nav-section">
+        <div class="container">
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="event.html">Events</a>
+                <a href="fees.html">Fees</a>
+                <a href="result.html">Result</a>
+                <a href="FAQ.html">FAQ</a>
+                <a href="logout.html">Logout</a>
+            </nav>
+        </div>
+    </div>
 
-</tr>
-</table>
+    <!-- Main Content -->
 
-<hr>
+    <main>
 
-        <nav>
-            <a href="home.html">Home</a> |
-            <a href="about.html">About</a> |
-            <a href="register.html">Register</a> |
-            <a href="login.html">Login</a> |
-            <a href="dashboard.html">Dashboard</a> |
-            <a href="profile.html">Profile</a> |
-            <a href="event.html">Events</a> |
-            <a href="fees.html">Fees</a> |
-            <a href="result.html">Result</a> |
-            <a href="logout.html">Logout</a>
-        </nav>
+        <div class="card">
+            <h2>Student Registration Form</h2>
+            <p>
+                Fill in the following details to create your StudentHub account.
+            </p>
 
-<hr>
+            <form action="login.html" id="registerForm">
 
-</header>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="Enter full name">
 
-<main>
+                <label for="enrollment">Enrollment Number</label>
+                <input type="text" id="enrollment" name="enrollment" required placeholder="Enter enrollment number">
 
-<section>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="Enter email address">
 
-<h2>Student Registration Form</h2>
+                <label for="mobile">Mobile Number</label>
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" maxlength="10" placeholder="Enter 10 digit mobile number" required>
 
-<p>
-Fill in the following details to create your StudentHub account.
-</p>
+                <label for="course">Course</label>
+                <select id="course" name="course" required>
+                    <option value="">Select Course</option>
+                    <option>B.Tech CSE</option>
+                    <option>B.Tech IT</option>
+                    <option>BCA</option>
+                    <option>MCA</option>
+                </select>
 
-<form action="login.html">
+                <label style="margin-top:20px;">Gender</label>
+                <div class="gender">
+                    <input type="radio" id="male" name="gender" value="Male" required>
+                    <label for="male" style="display:inline;font-weight:normal;">Male</label>
+                    &nbsp;&nbsp;
+                    <input type="radio" id="female" name="gender" value="Female">
+                    <label for="female" style="display:inline;font-weight:normal;">Female</label>
+                    &nbsp;&nbsp;
+                    <input type="radio" id="other" name="gender" value="Other">
+                    <label for="other" style="display:inline;font-weight:normal;">Other</label>
+                </div>
 
-<label for="name">Full Name:</label><br>
-<input type="text" id="name" name="name" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter password">
 
-<br><br>
+                <label for="confirm">Confirm Password</label>
+                <input type="password" id="confirm" name="confirm" required placeholder="Confirm password">
 
-<label for="enrollment">Enrollment Number:</label><br>
-<input type="text" id="enrollment" name="enrollment" required>
+                <div style="margin-top:20px;">
+                    <input type="checkbox" id="terms" required style="width:auto;">
+                    <label for="terms" style="display:inline;font-weight:normal;">
+                        I agree to the Terms and Conditions.
+                    </label>
+                </div>
 
-<br><br>
+                <div class="buttons">
+                    <input type="submit" value="Register">
+                    <input type="reset" value="Clear">
+                </div>
 
-<label for="email">Email Address:</label><br>
-<input type="email" id="email" name="email" required>
+            </form>
+        </div>
 
-<br><br>
+        <div class="card">
+            <h2>Already Registered?</h2>
+            <p>
+                If you already have an account?
+                <a href="login.html" style="color:#2098D1; font-weight:bold; text-decoration:none;">
+                    Login Here
+                </a>
+            </p>
+        </div>
 
-<label for="mobile">Mobile Number:</label><br>
-<input type="tel" id="mobile" name="mobile">
+        <div class="card contact-card">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <h3>StudentHub Portal</h3>
+                <p>📧 Email : studenthub@gmail.com</p>
+                <p>📞 Phone : +91 9876543210</p>
+                <p>📍 Address : CHARUSAT Campus, Changa, Gujarat 388421</p>
+            </div>
+        </div>
 
-<br><br>
+    </main>
 
-<label for="course">Course:</label><br>
+    <!-- Footer -->
 
-<select id="course" name="course">
-
-<option>Select Course</option>
-<option>B.Tech CSE</option>
-<option>B.Tech IT</option>
-<option>BCA</option>
-<option>MCA</option>
-
-</select>
-
-<br><br>
-
-<label>Gender:</label><br>
-
-<input type="radio" id="male" name="gender">
-<label for="male">Male</label>
-
-<input type="radio" id="female" name="gender">
-<label for="female">Female</label>
-
-<input type="radio" id="other" name="gender">
-<label for="other">Other</label>
-
-<br><br>
-
-<label for="password">Password:</label><br>
-<input type="password" id="password" name="password" required>
-
-<br><br>
-
-<label for="confirm">Confirm Password:</label><br>
-<input type="password" id="confirm" name="confirm" required>
-
-<br><br>
-
-<input type="checkbox" id="terms" required>
-<label for="terms">I agree to the Terms and Conditions.</label>
-
-<br><br>
-
-<input type="submit" value="Register">
-<input type="reset" value="Clear">
-
-</form>
-
-</section>
-
-<hr>
-
-<section>
-
-<h2>Already Registered?</h2>
-
-<p>
-If you already have an account,
-<a href="login.html">Login Here</a>
-</p>
-
-</section>
-
-</main>
-
-<hr>
-
-<footer>
-
-<p><strong>StudentHub Portal</strong></p>
-
-<p>&copy; 2026 StudentHub. All Rights Reserved.</p>
-
-</footer>
+    <footer>
+        <div class="footer-content">
+            <h2>StudentHub Portal</h2>
+            <p>Empowering Students Through Technology</p>
+            <p class="email">Email : studenthub@gmail.com</p>
+            <p class="copyright">&copy; 2026 StudentHub. All Rights Reserved.</p>
+        </div>
+    </footer>
 
 </body>
 

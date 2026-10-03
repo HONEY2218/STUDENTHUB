@@ -1,156 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub | Home</title>
-</head>
 
+    <!-- [BOOTSTRAP]: External CSS Framework -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style4.css">
+</head>
 <body>
 
-    <header>
-
-        <table width="100%">
-            <tr>
-                <td width="15%">
-                    <img src="studenthubLOGO.jpg" alt="StudentHub Logo" width="100">
-                </td>
-
-                <td>
-                    <h1>StudentHub</h1>
-                    <h3>Student Management Portal</h3>
-                </td>
-            </tr>
-        </table>
-
-        <hr>
-
-        <nav>
-            <a href="home.html">Home</a> |
-            <a href="about.html">About</a> |
-            <a href="register.html">Register</a> |
-            <a href="login.html">Login</a> |
-            <a href="dashboard.html">Dashboard</a> |
-            <a href="profile.html">Profile</a> |
-            <a href="event.html">Events</a> |
-            <a href="fees.html">Fees</a> |
-            <a href="result.html">Result</a> |
-            <a href="logout.html">Logout</a>
-        </nav>
-
-        <hr>
-
+    <!-- Header Section -->
+    <header class="py-4 shadow-sm">
+        <div class="container">
+            <!-- [FLEXBOX]: 'd-flex', 'align-items-center' અને 'gap-3' નો ઉપયોગ Logo અને Text ને ફ્લેક્સ રો (Horizontal alignment) માં ગોઠવવા કર્યો છે -->
+            <div class="d-flex align-items-center logo gap-3">
+                <!-- [BOOTSTRAP UTILITY]: 'rounded-circle' ઈમેજને ગોળાકાર કરવા માટે -->
+                <img src="image.jpg" alt="StudentHub Logo" class="rounded-circle">
+                <div>
+                    <h1 class="m-0 text-white fw-bold">StudentHub</h1>
+                    <h3 class="m-0 text-light fw-light fs-4">Student Management Portal</h3>
+                </div>
+            </div>
+        </div>
     </header>
 
-    <main>
+    <!-- Navigation Section ([BOOTSTRAP COMPONENT]: Navbar) -->
+    <nav class="navbar navbar-expand-lg nav-section sticky-top">
+        <div class="container">
+            <!-- [BOOTSTRAP COMPONENT]: Mobile Menu Toggle Button -->
+            <button class="navbar-toggler text-white bg-light my-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <!-- [FLEXBOX]: 'd-flex', 'flex-wrap', 'justify-content-center' અને 'gap-1' નો ઉપયોગ નેવિગેશન લીંક સેન્ટરમાં ગોઠવવા માટે થયો છે -->
+                <ul class="navbar-nav d-flex flex-wrap justify-content-center gap-1">
+                    <li class="nav-item"><a class="nav-link text-white fw-bold px-3 py-2 rounded" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold px-3 py-2 rounded" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold px-3 py-2 rounded" href="register.html">Register</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold px-3 py-2 rounded" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold px-3 py-2 rounded" href="dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold px-3 py-2 rounded" href="profile.html">Profile</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold px-3 py-2 rounded" href="event.html">Events</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold px-3 py-2 rounded" href="fees.html">Fees</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold px-3 py-2 rounded" href="result.html">Result</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold px-3 py-2 rounded" href="FAQ.html">FAQ</a></li>
+                    <li class="nav-item"><a class="nav-link text-white fw-bold px-3 py-2 rounded" href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-        <section>
+    <!-- Main Content Section -->
+    <main class="container my-5">
 
-            <h2>Welcome to StudentHub</h2>
+        <!-- [BOOTSTRAP COMPONENT]: Carousel / Image Slider Component -->
+        <div id="homeCarousel" class="carousel slide custom-slider mb-5 shadow rounded overflow-hidden" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
 
-            <p>
-                StudentHub is an online portal designed to help students manage
-                their academic activities. Students can register, log in,
-                view their profile, check fees, access results, and stay updated
-                with university events and notices.
-            </p>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="swipeimage6.jpg" class="slider-img" alt="Campus View 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="swipeimage1.jpg" class="slider-img" alt="Campus View 2">
+                </div>
+            </div>
 
-        </section>
+            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
 
-        <hr>
+        <!-- [BOOTSTRAP COMPONENT]: Card Structure -->
+        <div class="card mb-4 shadow-sm">
+            <h2 class="card-header text-white fs-4 py-3" style="background-color: #2098D1;">Welcome to StudentHub</h2>
+            <div class="card-body p-4">
+                <p class="card-text fs-5 text-dark m-0">
+                    StudentHub is an online portal designed to help students manage their academic activities. Students can register, log in, view their profile, check fees, access results, and stay updated with university events and notices.
+                </p>
+            </div>
+        </div>
 
-        <section>
+        <!-- Student Services -->
+        <div class="card mb-4 shadow-sm">
+            <h2 class="card-header text-white fs-4 py-3" style="background-color: #2098D1;">Student Services</h2>
+            <div class="card-body p-4">
+                <!-- [GRID SYSTEM]: 'row' એ Bootstrap Grid ની શરૂઆત દર્શાવે છે -->
+                <div class="row g-4">
+                    <!-- [GRID SYSTEM]: 'col-12 col-md-4' મોબાઈલમાં 12 કૉલમ (Full width) અને મેડિયમ સ્ક્રીનમાં 4 કૉલમ (એટલે કે 1 લાઈનમાં 3 કાર્ડ્સ) ગોઠવે છે -->
+                    <div class="col-12 col-md-4">
+                        <div class="p-3 border rounded h-100 bg-light">
+                            <h3 style="color: #1F3B73;" class="h5 fw-bold mb-2">Student Registration</h3>
+                            <p class="m-0 text-secondary fs-6">Create a new student account and complete your registration online.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="p-3 border rounded h-100 bg-light">
+                            <h3 style="color: #1F3B73;" class="h5 fw-bold mb-2">Student Profile</h3>
+                            <p class="m-0 text-secondary fs-6">View and update your personal and academic information.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="p-3 border rounded h-100 bg-light">
+                            <h3 style="color: #1F3B73;" class="h5 fw-bold mb-2">Fees Details</h3>
+                            <p class="m-0 text-secondary fs-6">Check semester fee status and download payment receipts.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="p-3 border rounded h-100 bg-light">
+                            <h3 style="color: #1F3B73;" class="h5 fw-bold mb-2">Results</h3>
+                            <p class="m-0 text-secondary fs-6">View semester examination results quickly and securely.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="p-3 border rounded h-100 bg-light">
+                            <h3 style="color: #1F3B73;" class="h5 fw-bold mb-2">Events</h3>
+                            <p class="m-0 text-secondary fs-6">Stay updated with workshops, seminars and campus activities.</p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <div class="p-3 border rounded h-100 bg-light">
+                            <h3 style="color: #1F3B73;" class="h5 fw-bold mb-2">Dashboard</h3>
+                            <p class="m-0 text-secondary fs-6">Access all student services from one convenient dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <h2>Student Services</h2>
+        <!-- Notice Board & Latest News Section -->
+        <!-- [GRID SYSTEM]: 'row' દ્વારા બે વિભાગ વહેંચવામાં આવ્યા છે -->
+        <div class="row g-4 mb-4">
+            <!-- [GRID SYSTEM]: 'col-12 col-md-6' મોટી સ્ક્રીન પર 50%-50% (6-6 કૉલમ) જગ્યા રોકે છે -->
+            <div class="col-12 col-md-6">
+                <div class="card shadow-sm h-100">
+                    <h2 class="card-header text-white fs-4 py-3" style="background-color: #2098D1;">Notice Board</h2>
+                    <div class="card-body p-4">
+                        <!-- [BOOTSTRAP COMPONENT]: List Group -->
+                        <ul class="list-group list-group-flush fs-6">
+                            <li class="list-group-item">Admissions Open for Academic Year 2026-27</li>
+                            <li class="list-group-item">Semester Examination Schedule Released</li>
+                            <li class="list-group-item">Hackathon Registration Starts Next Week</li>
+                            <li class="list-group-item">Library Timings Updated</li>
+                            <li class="list-group-item">Sports Week Registration is Now Open</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
-            <article>
-                <h3>Student Registration</h3>
-                <p>Create a new student account.</p>
-            </article>
+            <div class="col-12 col-md-6">
+                <div class="card shadow-sm h-100">
+                    <h2 class="card-header text-white fs-4 py-3" style="background-color: #2098D1;">Latest News</h2>
+                    <div class="card-body p-4">
+                        <!-- [BOOTSTRAP COMPONENT]: List Group -->
+                        <ul class="list-group list-group-flush fs-6">
+                            <li class="list-group-item">Online Student Registration Portal is Now Live.</li>
+                            <li class="list-group-item">Web Development Workshop on Friday.</li>
+                            <li class="list-group-item">Mid-Sem Examination Dates Announced.</li>
+                            <li class="list-group-item">Scholarship Applications are Open.</li>
+                            <li class="list-group-item">Placement Training Begins Next Month.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            <article>
-                <h3>Student Profile</h3>
-                <p>View and update personal information.</p>
-            </article>
-
-            <article>
-                <h3>Fees Details</h3>
-                <p>Check semester fee payment status.</p>
-            </article>
-
-            <article>
-                <h3>University Result</h3>
-                <p>View semester examination results.</p>
-            </article>
-
-            <article>
-                <h3>Events</h3>
-                <p>Check upcoming college events.</p>
-            </article>
-
-        </section>
-
-   
-
-        <aside>
-
-            <h2>Notice Board</h2>
-
-            <ul>
-                <li>Admissions Open for 2026-27</li>
-                <li>Semester Examination Schedule Released</li>
-                <li>Hackathon Registration Started</li>
-                <li>Library Timing Updated</li>
-                <li>Sports Week Coming Soon</li>
-            </ul>
-
-        </aside>
-
-        <hr>
-
-        <section>
-
-            <h2>Latest News</h2>
-
-            <ul>
-                <li>Online registration is now available.</li>
-                <li>Mid-Sem examination dates announced.</li>
-                <li>Web Development Workshop on Friday.</li>
-            </ul>
-
-        </section>
-
-        <hr>
-
-        <section>
-
-            <h2>Contact Us</h2>
-
-            <address>
-                StudentHub Portal<br><br>
-
-                Email : studenthubxxx@gmail.com<br><br>
-
-                Phone : +91 98xx543xxx<br><br>
-
-                Address : Anand, Gujarat, India
-            </address>
-
-        </section>
+        <!-- Contact Section ([BOOTSTRAP COMPONENT]: Card) -->
+        <div class="card contact-card shadow-sm mb-4">
+            <h2 class="card-header text-white fs-4 py-3" style="background-color: #2098D1;">Contact Us</h2>
+            <div class="card-body contact-info p-4">
+                <h3 class="fs-5 fw-bold" style="color: #1F3B73;">StudentHub Portal</h3>
+                <p class="mb-1">📧 Email : studenthub@gmail.com</p>
+                <p class="mb-1">📞 Phone : +91 9876543210</p>
+                <p class="mb-0">📍 Address : CHARUSAT Campus, Changa, Gujarat 388421</p>
+            </div>
+        </div>
 
     </main>
 
-    <hr>
-
-    <footer>
-
-        <p><strong>StudentHub Portal</strong></p>
-
-        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
-
+    <!-- Footer Section -->
+    <footer class="text-white py-5 mt-5">
+        <div class="container text-center">
+            <div class="footer-content">
+                <h2 class="fs-3 fw-bold mb-2">StudentHub Portal</h2>
+                <p class="mb-2">Empowering Students Through Technology</p>
+                <p class="email mb-3">Email : studenthub@gmail.com</p>
+                <p class="copyright small text-light m-0">&copy; 2026 StudentHub. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
-</body>
+    <!-- [BOOTSTRAP COMPONENT]: JavaScript Bundle for Interactive Components (Carousel, Dropdowns, etc.) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+</body>
 </html>

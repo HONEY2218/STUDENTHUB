@@ -5,110 +5,116 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StudentHub | Login</title>
+    <link rel="stylesheet" href="style4.css">
 </head>
 
 <body>
 
+    <!-- ===============================
+            HEADER
+    ================================ -->
+
     <header>
-
-        <table width="100%">
-            <tr>
-
-                <td width="15%">
-                    <img src="studenthubLOGO.jpg" alt="StudentHub Logo" width="100">
-                </td>
-
-                <td>
-                    <h1>StudentHub</h1>
-                    <h3>Student Login</h3>
-                </td>
-
-            </tr>
-        </table>
-
-        <hr>
-
-        <nav>
-            <a href="home.html">Home</a> |
-            <a href="about.html">About</a> |
-            <a href="register.html">Register</a> |
-            <a href="login.html">Login</a> |
-            <a href="dashboard.html">Dashboard</a> |
-            <a href="profile.html">Profile</a> |
-            <a href="event.html">Events</a> |
-            <a href="fees.html">Fees</a> |
-            <a href="result.html">Result</a> |
-            <a href="logout.html">Logout</a>
-        </nav>
-
-        <hr>
-
+        <div class="container">
+            <div class="top">
+                <div class="logo">
+                    <img src="image.jpg" alt="StudentHub Logo">
+                    <div>
+                        <h1>StudentHub</h1>
+                        <h3>Student Management Portal</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
     </header>
+
+    <!-- Navigation Section -->
+
+    <div class="nav-section">
+        <div class="container">
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="register.html">Register</a>
+                <a href="login.html">Login</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="profile.html">Profile</a>
+                <a href="event.html">Events</a>
+                <a href="fees.html">Fees</a>
+                <a href="result.html">Result</a>
+                <a href="FAQ.html">FAQ</a>
+                <a href="logout.html">Logout</a>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
 
     <main>
 
-        <section>
-
+        <div class="card">
             <h2>Student Login</h2>
-
             <p>
                 Enter your registered email and password to access your StudentHub account.
             </p>
 
             <form action="dashboard.html">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-                <label for="email">Email Address:</label><br>
-                <input type="email" id="email" name="email" required>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
-                <br><br>
+                <div style="margin-top:20px;">
+                    <input type="checkbox" id="remember" style="width:auto;">
+                    <label for="remember" style="display:inline; font-weight:normal;">
+                        Remember Me
+                    </label>
+                </div>
 
-                <label for="password">Password:</label><br>
-                <input type="password" id="password" name="password" required>
-
-                <br><br>
-
-                <input type="checkbox" id="remember">
-                <label for="remember">Remember Me</label>
-
-                <br><br>
-
-                <input type="submit" value="Login">
-                <input type="reset" value="Clear">
-
+                <div class="buttons">
+                    <input type="submit" value="Login">
+                    <input type="reset" value="Clear">
+                </div>
             </form>
+        </div>
 
-        </section>
-
-        <hr>
-
-        <section>
-
+        <div class="card">
             <h2>Need Help?</h2>
-
             <p>
                 Don't have an account?
-                <a href="register.html">Register Here</a>
-            </p>
-
-            <p>
+                <a href="register.html" style="color:#2098D1; font-weight:bold; text-decoration:none;">
+                    Register Here
+                </a>
+                <br><br>
                 Forgot your password?
-                <a href="faq.html">Visit FAQ</a>
+                <a href="FAQ.html" style="color:#2098D1; font-weight:bold; text-decoration:none;">
+                    Visit FAQ
+                </a>
             </p>
+        </div>
 
-        </section>
+        <div class="card contact-card">
+            <h2>Contact Us</h2>
+            <div class="contact-info">
+                <h3>StudentHub Portal</h3>
+                <p>📧 Email : studenthub@gmail.com</p>
+                <p>📞 Phone : +91 9876543210</p>
+                <p>📍 Address : CHARUSAT Campus, Changa, Gujarat 388421</p>
+            </div>
+        </div>
 
     </main>
 
-    <hr>
+    <!-- Footer -->
 
     <footer>
-
-        <p><strong>StudentHub Portal</strong></p>
-
-        <p>Email : studenthub@gmail.com</p>
-
-        <p>&copy; 2026 StudentHub. All Rights Reserved.</p>
-
+        <div class="footer-content">
+            <h2>StudentHub Portal</h2>
+            <p>Empowering Students Through Technology</p>
+            <p class="email">Email : studenthub@gmail.com</p>
+            <p class="copyright">&copy; 2026 StudentHub. All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>
