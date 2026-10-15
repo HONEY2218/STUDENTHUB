@@ -1,331 +1,197 @@
+
 <?php
-
-ob_start();
-
 include 'db.php';
 
-// Handle Student Creation
 if (isset($_POST['add_student'])) {
-
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $name = mysqli_real_escape_string($conn, trim($_POST['name']));
+    $email = mysqli_real_escape_string($conn, trim($_POST['email']));
     $course = mysqli_real_escape_string($conn, $_POST['course']);
     $gender = mysqli_real_escape_string($conn, $_POST['gender']);
 
-    $insert_sql = "INSERT INTO students (name, email, course, gender)
-                   VALUES ('$name', '$email', '$course', '$gender')";
-
-    if (mysqli_query($conn, $insert_sql)) {
-        header("Location: index.php");
-        exit();
-    } else {
-        die("Insert Error: " . mysqli_error($conn));
+    if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        header('Location: index.php?msg=invalid');
+        exit;
     }
+
+    $sql = "INSERT INTO students (name, email, course, gender)
+            VALUES ('$name', '$email', '$course', '$gender')";
+
+    header('Location: index.php?msg=' .
+        (mysqli_query($conn, $sql) ? 'added' : 'error'));
+    exit;
 }
 
-// Handle Student Deletion
-if (isset($_GET['delete'])) {
+if (isset($_POST['update_student'])) {
+    $id = (int)$_POST['id'];
+    $name = mysqli_real_escape_string($conn, trim($_POST['name']));
+    $email = mysqli_real_escape_string($conn, trim($_POST['email']));
+    $course = mysqli_real_escape_string($conn, $_POST['course']);
+    $gender = mysqli_real_escape_string($conn, $_POST['gender']);
 
-    $id = (int)$_GET['delete'];
+    if ($id > 0 && $name !== '' &&
+        filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $sql = "UPDATE students
+                SET name='$name', email='$email',
+                    course='$course', gender='$gender'
+                WHERE id=$id AND status='active'";
 
-    if ($id > 0) {
-
-        $delete_sql = "DELETE FROM students WHERE id = $id";
-
-        if (mysqli_query($conn, $delete_sql)) {
-            header("Location: index.php");
-            exit();
-        } else {
-            die("Delete Error: " . mysqli_error($conn));
-        }
-
+        header('Location: index.php?msg=' .
+            (mysqli_query($conn, $sql) ? 'updated' : 'error'));
     } else {
-        die("Invalid ID for deletion.");
+        header('Location: index.php?msg=invalid');
     }
+    exit;
 }
 
-// Search and Filter
-$search = isset($_GET['search'])
-    ? mysqli_real_escape_string($conn, $_GET['search'])
-    : '';
+if (isset($_POST['delete_student'])) {
+    $id = (int)$_POST['id'];
+    $sql = "UPDATE students SET status='inactive'
+            WHERE id=$id AND status='active'";
 
-$course_filter = isset($_GET['course_filter'])
-    ? mysqli_real_escape_string($conn, $_GET['course_filter'])
-    : '';
-
-$conditions = [];
-
-if (!empty($search)) {
-    $conditions[] = "(name LIKE '%$search%' OR email LIKE '%$search%')";
+    header('Location: index.php?msg=' .
+        (mysqli_query($conn, $sql) ? 'deleted' : 'error'));
+    exit;
 }
 
-if (!empty($course_filter)) {
-    $conditions[] = "course = '$course_filter'";
+$messages = [
+    'added' => 'Student added successfully.',
+    'updated' => 'Student updated successfully.',
+    'deleted' => 'Student soft-deleted successfully.',
+    'invalid' => 'Please enter valid student details.',
+    'error' => 'Operation failed.'
+];
+
+$msg = $_GET['msg'] ?? '';
+$search = mysqli_real_escape_string($conn, trim($_GET['search'] ?? ''));
+$courseFilter = $_GET['course_filter'] ?? '';
+
+$allowedCourses = [
+    'Computer Science',
+    'Web Development',
+    'Data Science'
+];
+
+$where = ["status='active'"];
+
+if ($search !== '') {
+    $where[] = "(name LIKE '%$search%' OR email LIKE '%$search%')";
 }
 
-$query_sql = "SELECT * FROM students";
-
-if (count($conditions) > 0) {
-    $query_sql .= " WHERE " . implode(' AND ', $conditions);
+if (in_array($courseFilter, $allowedCourses, true)) {
+    $safeCourse = mysqli_real_escape_string($conn, $courseFilter);
+    $where[] = "course='$safeCourse'";
 }
 
-$query_sql .= " ORDER BY id DESC";
-
-$result = mysqli_query($conn, $query_sql);
-
-if (!$result) {
-    die("Query Failed: " . mysqli_error($conn));
-}
-
+$sql = "SELECT * FROM students WHERE " .
+       implode(' AND ', $where) . " ORDER BY id DESC";
+$result = mysqli_query($conn, $sql);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <title>Student Management System</title>
-
-    <style>
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th,
-        td {
-            border: 1px solid #ddd;
-            padding: 8px;
-            text-align: left;
-        }
-
-        th {
-            background-color: #f2f2f2;
-        }
-
-        .form-group {
-            margin-bottom: 10px;
-        }
-
-        .form-inline {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .btn-delete {
-            color: red;
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Student Management System</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 25px; background: #f4f7fb; }
+h1, h2 { color: #203864; }
+.card { background: white; padding: 20px; margin-bottom: 20px; border-radius: 8px; }
+input, select, button, .button { padding: 10px; margin: 5px 3px; }
+button, .button { background: #203864; color: white; border: 0; cursor: pointer; text-decoration: none; border-radius: 4px; display: inline-block; }
+table { width: 100%; border-collapse: collapse; background: white; margin-top: 15px; }
+th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+th { background: #d9e5f6; }
+.message { padding: 12px; margin-bottom: 15px; background: #d9f2df; }
+.actions form { display: inline; }
+</style>
 </head>
-
 <body>
 
-    <h2>Add New Student</h2>
+<h1>Student Management System</h1>
 
-    <form method="POST" action="index.php">
+<?php if (isset($messages[$msg])): ?>
+<div class="message"><?= htmlspecialchars($messages[$msg]) ?></div>
+<?php endif; ?>
 
-        <div class="form-group">
+<div class="card">
+<h2>Add New Student</h2>
+<form method="POST">
+    <input type="text" name="name" placeholder="Full Name" required>
+    <input type="email" name="email" placeholder="Email" required>
 
-            <input
-                type="text"
-                name="name"
-                placeholder="Full Name"
-                required
-            >
+    <select name="course" required>
+        <option value="">Select Course</option>
+        <?php foreach ($allowedCourses as $c): ?>
+        <option value="<?= htmlspecialchars($c) ?>"><?= htmlspecialchars($c) ?></option>
+        <?php endforeach; ?>
+    </select>
 
-            <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-            >
+    <select name="gender" required>
+        <option value="">Select Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+        <option>Other</option>
+    </select>
 
-            <select name="course" required>
+    <button type="submit" name="add_student">Add Student</button>
+</form>
+</div>
 
-                <option value="">Select Course</option>
+<div class="card">
+<h2>Search and Filter Students</h2>
+<form method="GET" action="index.php">
+    <input type="text" name="search" placeholder="Search by name or email"
+           value="<?= htmlspecialchars($_GET['search'] ?? '') ?>">
 
-                <option value="Computer Science">
-                    Computer Science
-                </option>
+    <select name="course_filter">
+        <option value="">All Courses</option>
+        <?php foreach ($allowedCourses as $c): ?>
+        <option value="<?= htmlspecialchars($c) ?>"
+            <?= $courseFilter === $c ? 'selected' : '' ?>>
+            <?= htmlspecialchars($c) ?>
+        </option>
+        <?php endforeach; ?>
+    </select>
 
-                <option value="Web Development">
-                    Web Development
-                </option>
+    <button type="submit">Search / Filter</button>
+    <a class="button" href="index.php">Reset</a>
+    <a class="button" href="export.php">Export CSV</a>
+</form>
+</div>
 
-                <option value="Data Science">
-                    Data Science
-                </option>
-
-            </select>
-
-            <select name="gender" required>
-
-                <option value="">Select Gender</option>
-
-                <option value="Male">Male</option>
-
-                <option value="Female">Female</option>
-
-            </select>
-
-            <button type="submit" name="add_student">
-                Add Student
-            </button>
-
-        </div>
-
-    </form>
-
-    <hr>
-
-    <h2>Student List</h2>
-
-    <form method="GET" action="index.php" class="form-inline">
-
-        <input
-            type="text"
-            name="search"
-            placeholder="Search by name or email"
-            value="<?php echo htmlspecialchars($search); ?>"
-        >
-
-        <select name="course_filter">
-
-            <option value="">All Courses</option>
-
-            <option value="Computer Science"
-                <?php
-                if ($course_filter == 'Computer Science')
-                    echo 'selected';
-                ?>>
-                Computer Science
-            </option>
-
-            <option value="Web Development"
-                <?php
-                if ($course_filter == 'Web Development')
-                    echo 'selected';
-                ?>>
-                Web Development
-            </option>
-
-            <option value="Data Science"
-                <?php
-                if ($course_filter == 'Data Science')
-                    echo 'selected';
-                ?>>
-                Data Science
-            </option>
-
-        </select>
-
-        <button type="submit">
-            Filter
-        </button>
-
-        <a href="index.php">
-            <button type="button">
-                Reset
-            </button>
-        </a>
-
-    </form>
-
-    <table>
-
-        <thead>
-
-            <tr>
-
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Course</th>
-                <th>Gender</th>
-                <th>Actions</th>
-
-            </tr>
-
-        </thead>
-
-        <tbody>
-
-            <?php if (mysqli_num_rows($result) > 0): ?>
-
-                <?php while ($row = mysqli_fetch_assoc($result)): ?>
-
-                    <tr>
-
-                        <td>
-                            <?php echo $row['id']; ?>
-                        </td>
-
-                        <td>
-                            <?php echo htmlspecialchars($row['name']); ?>
-                        </td>
-
-                        <td>
-                            <?php echo htmlspecialchars($row['email']); ?>
-                        </td>
-
-                        <td>
-                            <?php echo htmlspecialchars($row['course']); ?>
-                        </td>
-
-                        <td>
-                            <?php echo htmlspecialchars($row['gender']); ?>
-                        </td>
-
-                        <td>
-
-                            <a href="edit.php?id=<?php echo $row['id']; ?>">
-                                Edit
-                            </a>
-
-                            |
-
-                            <a
-                                href="index.php?delete=<?php echo $row['id']; ?>"
-                                class="btn-delete"
-                                onclick="return confirm('Are you sure you want to delete this record?');"
-                            >
-                                Delete
-                            </a>
-
-                        </td>
-
-                    </tr>
-
-                <?php endwhile; ?>
-
-            <?php else: ?>
-
-                <tr>
-
-                    <td colspan="6">
-                        No records found.
-                    </td>
-
-                </tr>
-
-            <?php endif; ?>
-
-        </tbody>
-
-    </table>
+<div class="card">
+<h2>Student Records</h2>
+<table>
+<thead>
+<tr>
+    <th>ID</th><th>Name</th><th>Email</th>
+    <th>Course</th><th>Gender</th><th>Actions</th>
+</tr>
+</thead>
+<tbody>
+<?php if ($result && mysqli_num_rows($result) > 0): ?>
+    <?php while ($row = mysqli_fetch_assoc($result)): ?>
+    <tr>
+        <td><?= (int)$row['id'] ?></td>
+        <td><?= htmlspecialchars($row['name']) ?></td>
+        <td><?= htmlspecialchars($row['email']) ?></td>
+        <td><?= htmlspecialchars($row['course']) ?></td>
+        <td><?= htmlspecialchars($row['gender']) ?></td>
+        <td class="actions">
+            <a class="button" href="edit.php?id=<?= (int)$row['id'] ?>">Edit</a>
+            <form method="POST" onsubmit="return confirm('Are you sure you want to deactivate this student?');">
+                <input type="hidden" name="id" value="<?= (int)$row['id'] ?>">
+                <button type="submit" name="delete_student">Delete</button>
+            </form>
+        </td>
+    </tr>
+    <?php endwhile; ?>
+<?php else: ?>
+<tr><td colspan="6">No active student records found.</td></tr>
+<?php endif; ?>
+</tbody>
+</table>
+</div>
 
 </body>
-
 </html>

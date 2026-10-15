@@ -1,181 +1,98 @@
+
 <?php
-
-ob_start();
-
 include 'db.php';
 
 $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
 
-if ($id <= 0) {
-    die("Invalid record ID.");
+$result = mysqli_query(
+    $conn,
+    "SELECT * FROM students WHERE id=$id AND status='active'"
+);
+
+$student = $result ? mysqli_fetch_assoc($result) : null;
+
+if (!$student) {
+    die("Student record not found or inactive.");
 }
 
-// Fetch existing record
-$select_sql = "SELECT * FROM students WHERE id = $id";
+$message = "";
 
-$fetch_result = mysqli_query($conn, $select_sql);
-
-if (!$fetch_result || mysqli_num_rows($fetch_result) == 0) {
-    die("Student record not found.");
-}
-
-$student = mysqli_fetch_assoc($fetch_result);
-
-// Handle Form Update
 if (isset($_POST['update_student'])) {
-
-    $name = mysqli_real_escape_string($conn, $_POST['name']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $name = mysqli_real_escape_string($conn, trim($_POST['name']));
+    $email = mysqli_real_escape_string($conn, trim($_POST['email']));
     $course = mysqli_real_escape_string($conn, $_POST['course']);
     $gender = mysqli_real_escape_string($conn, $_POST['gender']);
 
-    $update_sql = "UPDATE students
-                   SET name = '$name',
-                       email = '$email',
-                       course = '$course',
-                       gender = '$gender'
-                   WHERE id = $id";
-
-    if (mysqli_query($conn, $update_sql)) {
-
-        header("Location: index.php");
-        exit();
-
+    if ($name === "" || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $message = "Please enter valid details.";
     } else {
+        $sql = "UPDATE students SET
+                name='$name',
+                email='$email',
+                course='$course',
+                gender='$gender'
+                WHERE id=$id AND status='active'";
 
-        die("Update Error: " . mysqli_error($conn));
-
+        if (mysqli_query($conn, $sql)) {
+            header("Location: index.php?msg=updated");
+            exit;
+        } else {
+            $message = "Update failed: " . mysqli_error($conn);
+        }
     }
 }
-
 ?>
-
 <!DOCTYPE html>
-
 <html lang="en">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <title>Edit Student</title>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Edit Student</title>
+<style>
+body { font-family: Arial; margin: 30px; background: #f4f7fb; }
+form { background: white; padding: 20px; max-width: 450px; }
+input, select, button { display: block; margin: 12px 0; padding: 10px; width: 95%; }
+button { background: #203864; color: white; border: 0; cursor: pointer; }
+</style>
 </head>
-
 <body>
+<h1>Edit Student Details</h1>
 
-    <h2>Edit Student Details</h2>
+<?php if ($message !== ""): ?>
+<p><?= htmlspecialchars($message) ?></p>
+<?php endif; ?>
 
-    <form method="POST" action="edit.php?id=<?php echo $id; ?>">
+<form method="POST">
+    <label>Full Name</label>
+    <input type="text" name="name"
+           value="<?= htmlspecialchars($student['name']) ?>" required>
 
-        <div>
+    <label>Email</label>
+    <input type="email" name="email"
+           value="<?= htmlspecialchars($student['email']) ?>" required>
 
-            <label>Name:</label>
-            <br>
+    <label>Course</label>
+    <select name="course" required>
+        <?php foreach (['Computer Science','Web Development','Data Science'] as $c): ?>
+        <option value="<?= htmlspecialchars($c) ?>"
+            <?= $student['course'] === $c ? 'selected' : '' ?>>
+            <?= htmlspecialchars($c) ?>
+        </option>
+        <?php endforeach; ?>
+    </select>
 
-            <input
-                type="text"
-                name="name"
-                value="<?php echo htmlspecialchars($student['name']); ?>"
-                required
-            >
+    <label>Gender</label>
+    <select name="gender" required>
+        <?php foreach (['Male','Female','Other'] as $g): ?>
+        <option value="<?= htmlspecialchars($g) ?>"
+            <?= $student['gender'] === $g ? 'selected' : '' ?>>
+            <?= htmlspecialchars($g) ?>
+        </option>
+        <?php endforeach; ?>
+    </select>
 
-        </div>
-
-        <br>
-
-        <div>
-
-            <label>Email:</label>
-            <br>
-
-            <input
-                type="email"
-                name="email"
-                value="<?php echo htmlspecialchars($student['email']); ?>"
-                required
-            >
-
-        </div>
-
-        <br>
-
-        <div>
-
-            <label>Course:</label>
-            <br>
-
-            <select name="course" required>
-
-                <option value="Computer Science"
-                    <?php
-                    if ($student['course'] == 'Computer Science')
-                        echo 'selected';
-                    ?>>
-                    Computer Science
-                </option>
-
-                <option value="Web Development"
-                    <?php
-                    if ($student['course'] == 'Web Development')
-                        echo 'selected';
-                    ?>>
-                    Web Development
-                </option>
-
-                <option value="Data Science"
-                    <?php
-                    if ($student['course'] == 'Data Science')
-                        echo 'selected';
-                    ?>>
-                    Data Science
-                </option>
-
-            </select>
-
-        </div>
-
-        <br>
-
-        <div>
-
-            <label>Gender:</label>
-            <br>
-
-            <select name="gender" required>
-
-                <option value="Male"
-                    <?php
-                    if ($student['gender'] == 'Male')
-                        echo 'selected';
-                    ?>>
-                    Male
-                </option>
-
-                <option value="Female"
-                    <?php
-                    if ($student['gender'] == 'Female')
-                        echo 'selected';
-                    ?>>
-                    Female
-                </option>
-
-            </select>
-
-        </div>
-
-        <br>
-
-        <button type="submit" name="update_student">
-            Update
-        </button>
-
-        <a href="index.php">
-            Cancel
-        </a>
-
-    </form>
-
+    <button type="submit" name="update_student">Update Student</button>
+    <a href="index.php">Back to Student List</a>
+</form>
 </body>
-
 </html>
