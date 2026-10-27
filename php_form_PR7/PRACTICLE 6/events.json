@@ -1,0 +1,122 @@
+[
+    {
+        "id": 1,
+        "title": "Hackathon 2026",
+        "date": "2026-08-10",
+        "venue": "Computer Lab",
+        "category": "Technical",
+        "description": "A coding hackathon where students develop innovative solutions."
+    },
+    {
+        "id": 2,
+        "title": "Sports Day",
+        "date": "2026-09-20",
+        "venue": "College Ground",
+        "category": "Sports",
+        "description": "Annual sports activities including cricket, football and athletics."
+    },
+    {
+        "id": 3,
+        "title": "Cultural Fest",
+        "date": "2026-10-15",
+        "venue": "Auditorium",
+        "category": "Cultural",
+        "description": "A cultural celebration featuring music, dance and drama."
+    },
+    {
+        "id": 4,
+        "title": "Web Development Workshop",
+        "date": "2026-10-25",
+        "venue": "Seminar Hall",
+        "category": "Workshop",
+        "description": "Hands-on workshop covering HTML, CSS and JavaScript."
+    },
+    {
+        "id": 5,
+        "title": "Coding Competition",
+        "date": "2026-11-05",
+        "venue": "Programming Lab",
+        "category": "Technical",
+        "description": "Competitive programming event for students."
+    },
+    {
+        "id": 6,
+        "title": "Industrial Visit",
+        "date": "2026-11-12",
+        "venue": "Ahmedabad",
+        "category": "Industrial Visit",
+        "description": "Educational industrial visit to understand real-world technology."
+    },
+    {
+        "id": 7,
+        "title": "Guest Lecture on AI",
+        "date": "2026-11-20",
+        "venue": "Conference Hall",
+        "category": "Guest Lecture",
+        "description": "Expert lecture introducing students to Artificial Intelligence."
+    },
+    {
+        "id": 8,
+        "title": "Career Guidance Program",
+        "date": "2026-11-28",
+        "venue": "Seminar Hall",
+        "category": "Career",
+        "description": "Career guidance session covering higher studies and job opportunities."
+    },
+    {
+        "id": 9,
+        "title": "Java Programming Workshop",
+        "date": "2026-12-03",
+        "venue": "Computer Lab",
+        "category": "Workshop",
+        "description": "Practical workshop on Java programming and object-oriented concepts."
+    },
+    {
+        "id": 10,
+        "title": "Quiz Competition",
+        "date": "2026-12-10",
+        "venue": "Classroom Block",
+        "category": "Academic",
+        "description": "General knowledge and technical quiz competition."
+    },
+    {
+        "id": 11,
+        "title": "Photography Contest",
+        "date": "2026-12-15",
+        "venue": "College Campus",
+        "category": "Cultural",
+        "description": "Photography competition showcasing creativity and campus life."
+    },
+    {
+        "id": 12,
+        "title": "Football Tournament",
+        "date": "2026-12-20",
+        "venue": "College Ground",
+        "category": "Sports",
+        "description": "Inter-department football tournament for students."
+    },
+    {
+        "id": 13,
+        "title": "Cyber Security Seminar",
+        "date": "2027-01-08",
+        "venue": "Conference Hall",
+        "category": "Technical",
+        "description": "Seminar on cyber security, online safety and ethical hacking."
+    },
+    {
+        "id": 14,
+        "title": "Resume Building Workshop",
+        "date": "2027-01-15",
+        "venue": "Seminar Hall",
+        "category": "Career",
+        "description": "Workshop helping students create professional resumes."
+    },
+    {
+        "id": 15,
+        "title": "Annual College Day",
+        "date": "2027-01-25",
+        "venue": "Main Auditorium",
+        "category": "Cultural",
+        "description": "Annual college celebration with student performances and awards."
+    }
+]

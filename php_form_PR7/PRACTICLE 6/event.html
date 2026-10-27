@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StudentHub | Events</title>
+
+    <link rel="stylesheet" href="style4.css">
+
+</head>
+
+<body>
+
+<!-- ===============================
+     HEADER
+================================ -->
+
+<header>
+
+    <div class="container">
+
+        <div class="top">
+
+            <div class="logo">
+
+                <img src="image.jpg" alt="StudentHub Logo">
+
+                <div>
+
+                    <h1>StudentHub</h1>
+
+                    <h3>Student Management Portal</h3>
+
+                </div>
+
+            </div>
+
+            <button class="theme-btn" id="themeBtn">
+                🌙 Dark Mode
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ===============================
+     NAVIGATION
+================================ -->
+
+<div class="nav-section">
+
+    <div class="container">
+
+        <div class="menu" id="menuBtn">☰</div>
+
+        <nav id="navbar">
+
+            <a href="home.html">Home</a>
+
+            <a href="about.html">About</a>
+
+            <a href="register.html">Register</a>
+
+            <a href="login.html">Login</a>
+
+            <a href="dashboard.html">Dashboard</a>
+
+            <a href="profile.html">Profile</a>
+
+            <a href="event.html">Events</a>
+
+            <a href="fees.html">Fees</a>
+
+            <a href="result.html">Result</a>
+
+            <a href="FAQ.html">FAQ</a>
+
+            <a href="logout.html">Logout</a>
+
+        </nav>
+
+    </div>
+
+</div>
+
+
+<!-- ===============================
+     MAIN
+================================ -->
+
+<main>
+
+
+    <!-- =====================================
+         PRACTICAL 6 : EVENT DATA SECTION
+    ====================================== -->
+
+    <div class="card">
+
+        <h2>Upcoming Events</h2>
+
+        <p>
+            Explore upcoming StudentHub events using
+            search, filter and sorting options.
+        </p>
+
+
+        <!-- ===============================
+             SEARCH AND FILTER
+        ================================ -->
+
+        <div class="event-controls">
+
+            <!-- Search -->
+
+            <div class="event-control">
+
+                <label for="eventSearch">
+                    Search Events
+                </label>
+
+                <input
+                    type="text"
+                    id="eventSearch"
+                    placeholder="Search event by name..."
+                >
+
+            </div>
+
+
+            <!-- Category Filter -->
+
+            <div class="event-control">
+
+                <label for="categoryFilter">
+                    Filter by Category
+                </label>
+
+                <select id="categoryFilter">
+
+                    <option value="all">
+                        All Categories
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Sort -->
+
+            <div class="event-control">
+
+                <label for="sortEvents">
+                    Sort Events
+                </label>
+
+                <select id="sortEvents">
+
+                    <option value="date-asc">
+                        Date: Oldest First
+                    </option>
+
+                    <option value="date-desc">
+                        Date: Newest First
+                    </option>
+
+                    <option value="title-asc">
+                        Title: A-Z
+                    </option>
+
+                    <option value="title-desc">
+                        Title: Z-A
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- ===============================
+             LOADING MESSAGE
+        ================================ -->
+
+        <div id="loadingMessage" class="info-box">
+
+            <p>
+                Loading events...
+            </p>
+
+        </div>
+
+
+        <!-- ===============================
+             ERROR MESSAGE
+        ================================ -->
+
+        <div
+            id="errorMessage"
+            class="error-box"
+            style="display:none;"
+        >
+
+            <p>
+                Unable to load events. Please try again later.
+            </p>
+
+        </div>
+
+        <!-- ===============================
+     EVENT COUNT
+================================ -->
+
+<div id="eventCount" class="event-count"></div>
+
+
+<!-- ===============================
+     DYNAMIC EVENT CARDS
+================================ -->
+
+<div id="eventContainer" class="event-container">
+
+    <!-- Events will be displayed here using JavaScript -->
+
+</div>
+
+
+<!-- ===============================
+     NO RESULTS MESSAGE
+================================ -->
+
+<div
+    id="noEvents"
+    class="warning-box"
+    style="display:none;"
+>
+    <p>No events found.</p>
+</div>
+
+
+<!-- ===============================
+     PAGINATION
+================================ -->
+
+<div id="pagination" class="pagination"></div>
+   
+
+
+        <!-- ===============================
+             NO RESULTS MESSAGE
+        ================================ -->
+
+        <div
+            id="noEvents"
+            class="warning-box"
+            style="display:none;"
+        >
+
+            <p>
+                No events found.
+            </p>
+
+        </div>
+
+
+        <!-- ===============================
+             PAGINATION
+        ================================ -->
+
+        <div
+            id="pagination"
+            class="pagination"
+        ></div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         EVENT CATEGORIES
+    ====================================== -->
+
+    <div class="event-grid">
+
+        <div class="card">
+
+            <h2>Event Categories</h2>
+
+            <ul>
+
+                <li>Technical Events</li>
+
+                <li>Sports Activities</li>
+
+                <li>Cultural Programs</li>
+
+                <li>Workshops & Seminars</li>
+
+                <li>Coding Competitions</li>
+
+                <li>Industrial Visits</li>
+
+                <li>Guest Lectures</li>
+
+                <li>Career Guidance Programs</li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- =====================================
+             LATEST ANNOUNCEMENTS
+        ====================================== -->
+
+        <div class="card">
+
+            <h2>Latest Announcements</h2>
+
+            <ul>
+
+                <li>
+                    Hackathon 2026 registration is open.
+                </li>
+
+                <li>
+                    Sports Day participant registration is open.
+                </li>
+
+                <li>
+                    Students must carry their College ID Card
+                    during all events.
+                </li>
+
+                <li>
+                    Workshop participation certificates
+                    will be provided.
+                </li>
+
+                <li>
+                    Cultural Fest auditions will begin soon.
+                </li>
+
+                <li>
+                    For event-related queries, contact the
+                    Student Activity Coordinator.
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <!-- =====================================
+             UPCOMING HIGHLIGHTS
+        ====================================== -->
+
+        <div class="card">
+
+            <h2>Upcoming Highlights</h2>
+
+            <p>
+
+                StudentHub regularly organizes technical,
+                cultural, sports and educational events to
+                improve students' practical knowledge,
+                teamwork, leadership skills and overall
+                personality development.
+
+                Students are encouraged to participate
+                actively in different events throughout
+                the academic year.
+
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================
+         CONTACT US
+    ====================================== -->
+
+    <div class="card contact-card">
+
+        <h2>Contact Us</h2>
+
+        <div class="contact-info">
+
+            <h3>StudentHub Portal</h3>
+
+            <p>
+                📧 Email : studenthub@gmail.com
+            </p>
+
+            <p>
+                📞 Phone : +91 9876543210
+            </p>
+
+            <p>
+                📍 Address : CHARUSAT Campus,
+                Changa, Gujarat 388421
+            </p>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<!-- ===============================
+     FOOTER
+================================ -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <h2>StudentHub Portal</h2>
+
+        <p>
+            Empowering Students Through Technology
+        </p>
+
+        <p class="email">
+            Email : studenthub@gmail.com
+        </p>
+
+        <p class="copyright">
+            &copy; 2026 StudentHub. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+<!-- ===============================
+     JAVASCRIPT
+================================ -->
+
+<script src="myscript.js"></script>
+
+</body>
+
+</html>
