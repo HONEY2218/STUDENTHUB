@@ -1,5 +1,5 @@
 /*==================================================
-            STUDENTHUB NEW THEME (PART-1)
+            STUDENTHUB THEME (PRACTICAL 3)
 ==================================================*/
 
 *{
@@ -16,19 +16,22 @@ body{
     font-family:'Segoe UI',Tahoma,sans-serif;
     background:#F4F6F9;
     color:#333;
-    transition:.4s;
 }
 
 /*==================== CONTAINER ====================*/
 
+/* [BOOTSTRAP OVERRIDE]: Customizing Bootstrap's standard .container width and max-width */
 .container{
     width:92%;
     max-width:1400px;
     margin:auto;
 }
 
-/*==================== HEADER ====================*/
+/*==================================================
+              HEADER - FLEXBOX
+==================================================*/
 
+/* [FLEXBOX]: Header layout uses Flexbox for vertical centering */
 header {
     background: linear-gradient(135deg, #182E5A, #1F3B73);
     min-height: 220px;
@@ -40,8 +43,9 @@ header {
     position: relative;
 }
 
-/*==================== TOP ====================*/
+/*==================== TOP FLEXBOX ====================*/
 
+/* [FLEXBOX]: Spreads child elements across the horizontal space */
 .top {
     display: flex;
     justify-content: space-between;
@@ -49,8 +53,9 @@ header {
     width: 100%;
 }
 
-/*==================== LOGO & MAIN TITLE ====================*/
+/*==================== LOGO & MAIN TITLE FLEXBOX ====================*/
 
+/* [FLEXBOX]: Aligns logo image and title text inline with defined spacing */
 .logo {
     display: flex;
     align-items: center;
@@ -90,13 +95,16 @@ header {
     letter-spacing: 0.8px;
 }
 
-/*==================== NAVIGATION ====================*/
+/*==================================================
+               NAVIGATION - FLEXBOX
+==================================================*/
 
 .nav-section{
     background:#294B8A;
     box-shadow:0 3px 10px rgba(0,0,0,.15);
 }
 
+/* [FLEXBOX]: Centers menu items with wrapping enabled for smaller screens */
 nav{
     width:100%;
     display:flex;
@@ -122,8 +130,7 @@ nav a:hover{
 }
 
 /*==================================================
-        STUDENTHUB NEW THEME (PART-2)
-        MAIN • CARDS • TITLES • CONTENT
+         MAIN • CARDS • TITLES • CONTENT
 ==================================================*/
 
 main{
@@ -132,8 +139,32 @@ main{
     margin:35px auto;
 }
 
+/*==================== FULL WIDTH SLIDER ====================*/
+
+/* [BOOTSTRAP CAROUSEL STYLING]: Customizing Bootstrap Carousel component dimensions */
+.custom-slider {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.carousel-item {
+    height: 420px;
+    background-color: #e0e0e0;
+}
+
+.slider-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
 /*==================== CARD ====================*/
 
+/* [BOOTSTRAP CARD OVERRIDE]: Custom styling for Bootstrap Card component */
 .card{
     background:white;
     border-radius:10px;
@@ -163,7 +194,7 @@ main{
     color:#1d1a1a;
 }
 
-/*==================== CONTACT CARD COMPACT FIX ====================*/
+/*==================== CONTACT CARD ====================*/
 
 .contact-card {
     padding: 0 !important;
@@ -195,33 +226,6 @@ main{
     line-height: 1.2 !important;
 }
 
-/*==================== SERVICES SECTION ALIGNMENT FIX ====================*/
-
-.services {
-    padding: 25px; 
-    display: flex;
-    flex-direction: column;
-    gap: 20px; 
-}
-
-.service {
-    margin-bottom: 5px;
-}
-
-.service h3 {
-    color: #1F3B73;
-    font-size: 22px;
-    margin-bottom: 8px; 
-    padding: 0; 
-}
-
-.service p {
-    padding: 0 !important; 
-    font-size: 17px;
-    color: #444;
-    line-height: 1.6;
-}
-
 /*==================== WELCOME SECTION ====================*/
 
 .welcome-box{
@@ -247,7 +251,24 @@ main{
     color:#555;
 }
 
-/*==================== SECTION SPACING & HEADING ====================*/
+/*==================================================
+              ROW - FLEXBOX (GRID LAYOUT)
+==================================================*/
+
+/* [BOOTSTRAP GRID / FLEXBOX]: Re-defining Bootstrap .row to use Flexbox as a flexible Grid system */
+.row{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* [FLEXBOX GRID COLUMNS]: Flex-grow creates automatic responsive grid columns (Min width 300px) */
+.row .card{
+    flex: 1;
+    min-width: 300px;
+}
+
+/*==================== SECTION SPACING ====================*/
 
 section{
     margin-bottom:35px;
@@ -277,118 +298,15 @@ address{
     line-height:2;
 }
 
-/*==================================================
-        STUDENTHUB NEW THEME (PART-3)
-        BUTTONS • FAQ • CONTACT BUTTON
-==================================================*/
+/*==================== BUTTONS ====================*/
 
+/* [BOOTSTRAP BUTTON OVERRIDE]: Custom styles for Bootstrap button classes */
 button{
     font-family:'Segoe UI',sans-serif;
     cursor:pointer;
     transition:.3s;
     border:none;
     outline:none;
-}
-
-/*==================== FAQ BUTTON ====================*/
-
-.faq-btn{
-    width:100%;
-    background:white;
-    color:#1F3B73;
-    padding:18px 22px;
-    margin:0;
-    border:none;
-    border-bottom:1px solid #dcf0df;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    font-size:18px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.faq-btn:hover{
-    background:#F4F9FF;
-    color:#2098D1;
-    padding-left:30px;
-}
-
-.faq-answer{
-    display:none;
-    background:#FAFCFF;
-    padding:20px 25px;
-    color:#444;
-    font-size:18px;
-    font-weight:500;
-    line-height:1.8;
-    opacity:1;
-    border-left:5px solid #2098D1;
-    border-bottom:1px solid #E3E8EF;
-}
-
-.faq-btn span{
-    font-size:22px;
-    color:#2098D1;
-    font-weight:bold;
-}
-
-/*==================== CONTACT & THEME BUTTONS ====================*/
-
-.contact-btn,
-#openModal{
-    background:#2098D1;
-    color:white;
-    padding:14px 30px;
-    font-size:17px;
-    font-weight:600;
-    border-radius:6px;
-    transition:.3s;
-}
-
-.contact-btn:hover,
-#openModal:hover{
-    background:#1B7FB0;
-    transform:translateY(-2px);
-    box-shadow:0 6px 15px rgba(0,0,0,.18);
-}
-
-#closeModal{
-    background:#1F3B73;
-    color:white;
-    padding:12px 24px;
-    border-radius:6px;
-    transition:.3s;
-}
-
-#closeModal:hover{
-    background:#294B8A;
-}
-
-.theme-btn {
-    position: absolute;
-    top: 15px;
-    right: 20px;
-    padding: 6px 14px;
-    font-size: 13px;
-    font-weight: 600;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.15);
-    color: #FFFFFF;
-    cursor: pointer;
-    white-space: nowrap;
-    backdrop-filter: blur(5px);
-    transition: all 0.3s ease;
-    z-index: 10;
-}
-
-.theme-btn:hover {
-    background: #2098D1;
-    border-color: #2098D1;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .btn{
@@ -406,56 +324,12 @@ button{
 }
 
 /*==================================================
-        STUDENTHUB NEW THEME (PART-4)
-         FORMS • INPUTS • LOGIN • REGISTER
+        FORMS • INPUTS • LOGIN • REGISTER
 ==================================================*/
 
 form {
     width: 100%;
     padding: 25px; 
-}
-
-.form-field {
-    display: flex;
-    flex-direction: column;
-}
-
-.error-msg {
-    color: #dc2626;
-    font-size: 14px;
-    font-weight: 600;
-    margin-top: 4px;
-    display: block;
-}
-
-/* SUCCESS MESSAGE STYLING BELOW BUTTONS */
-.success-display {
-    color: #16a34a;
-    font-size: 18px;
-    font-weight: 700;
-    margin-top: 15px;
-}
-
-/* FIXED TERMS AND CONDITIONS CHECKBOX LAYOUT */
-.terms-container {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.terms-container input[type="checkbox"] {
-    margin: 0 !important;
-    width: 18px !important;
-    height: 18px !important;
-    cursor: pointer;
-}
-
-.terms-container label {
-    margin: 0 !important;
-    font-weight: normal !important;
-    cursor: pointer;
-    line-height: 1 !important;
 }
 
 label{
@@ -504,6 +378,8 @@ textarea{
 
 input[type=radio],
 input[type=checkbox]{
+    margin-right:8px;
+    transform:scale(1.15);
     accent-color:#2098D1;
 }
 
@@ -529,38 +405,11 @@ input[type=reset]:hover{
     box-shadow:0 5px 12px rgba(0,0,0,.15);
 }
 
-.form-row{
-    display:flex;
-    gap:20px;
-    flex-wrap:wrap;
-}
-
-.form-group{
-    flex:1;
-    min-width:250px;
-}
-
-.login-box{
-    max-width:500px;
-    margin:auto;
-    background:white;
-    padding:35px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
-}
-
-.register-box{
-    background:white;
-    padding:35px;
-    border-radius:10px;
-    box-shadow:0 5px 15px rgba(0,0,0,.12);
-}
-
 /*==================================================
-        STUDENTHUB NEW THEME (PART-5)
-            TABLES • RESULT • FEES
+              TABLES • RESULT • FEES
 ==================================================*/
 
+/* [BOOTSTRAP TABLE STYLING]: Customizing data tables for responsive web views */
 table{
     width:100%;
     border-collapse:collapse;
@@ -596,194 +445,13 @@ tr:hover{
     background:#E8F4FF;
 }
 
-caption{
-    font-size:22px;
-    font-weight:bold;
-    color:#1F3B73;
-    margin-bottom:15px;
-}
-
-.pass, .paid{ color:#16A34A; font-weight:bold; }
-.fail, .unpaid{ color:#DC2626; font-weight:bold; }
-.pending{ color:#D97706; font-weight:bold; }
-
 .table-container{
     overflow-x:auto;
 }
 
 /*==================================================
-        STUDENTHUB NEW THEME (PART-6)
-    DASHBOARD • PROFILE • EVENT • INFO CARDS
+                    FOOTER-FLEXBOX
 ==================================================*/
-
-.dashboard-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-    margin-top:25px;
-}
-
-.dashboard-card{
-    background:white;
-    border-radius:10px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,.12);
-    border-top:5px solid #2098D1;
-    transition:.3s;
-}
-
-.dashboard-card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 10px 22px rgba(0,0,0,.18);
-}
-
-.dashboard-card h3{
-    color:#1F3B73;
-    margin-bottom:15px;
-    font-size:22px;
-}
-
-.dashboard-card p{
-    font-size:18px;
-    color:#666;
-}
-
-.profile-card{
-    background:white;
-    border-radius:10px;
-    padding:30px;
-    box-shadow:0 5px 15px rgba(0,0,0,.12);
-    text-align:center;
-}
-
-.profile-card img{
-    width:130px;
-    height:130px;
-    border-radius:50%;
-    border:4px solid #2098D1;
-    margin-bottom:20px;
-}
-
-.profile-card h2{
-    background:none;
-    color:#1F3B73;
-    padding:0;
-    margin-bottom:10px;
-}
-
-.profile-card p{
-    padding:0;
-    color:#666;
-}
-
-.event-card{
-    background:white;
-    border-left:6px solid #2098D1;
-    border-radius:10px;
-    padding:25px;
-    margin-bottom:20px;
-    box-shadow:0 4px 12px rgba(0,0,0,.10);
-    transition:.3s;
-}
-
-.event-card:hover{
-    transform:translateX(6px);
-}
-
-.event-card h3{
-    color:#1F3B73;
-    margin-bottom:10px;
-}
-
-.event-card p{
-    padding:0;
-    color:#555;
-}
-
-.info-box{
-    background:#EAF5FF;
-    border-left:5px solid #2098D1;
-    padding:20px;
-    border-radius:8px;
-    margin:20px 0;
-}
-
-.info-box h3{
-    color:#1F3B73;
-    margin-bottom:10px;
-}
-
-.info-box p{
-    padding:0;
-}
-
-.success-box{ background:#E8F8EC; border-left:5px solid #16A34A; padding:18px; border-radius:8px; margin:20px 0; }
-.warning-box{ background:#FFF8E6; border-left:5px solid #D97706; padding:18px; border-radius:8px; margin:20px 0; }
-.error-box{ background:#FDECEC; border-left:5px solid #DC2626; padding:18px; border-radius:8px; margin:20px 0; }
-
-/*==================================================
-        STUDENTHUB NEW THEME (PART-7)
-NOTIFICATION • SLIDER • MODAL • FOOTER • DARK MODE
-==================================================*/
-
-.banner{
-    background:#FFD54F;
-    color:#222;
-    padding:14px 20px;
-    text-align:center;
-    font-size:16px;
-    font-weight:600;
-    position:relative;
-    box-shadow:0 2px 8px rgba(0,0,0,.15);
-}
-
-.banner span{
-    position:absolute;
-    right:20px;
-    top:10px;
-    font-size:22px;
-    cursor:pointer;
-}
-
-.slider{
-    background:linear-gradient(135deg,#1F3B73,#2C82C9);
-    color:white;
-    text-align:center;
-    padding:45px;
-    border-radius:10px;
-    font-size:32px;
-    font-weight:600;
-    margin-bottom:30px;
-    box-shadow:0 5px 15px rgba(0,0,0,.18);
-}
-
-.modal{
-    display:none;
-    position:fixed;
-    left:0;
-    top:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,.55);
-    z-index:1000;
-}
-
-.modal-content{
-    background:white;
-    width:420px;
-    max-width:90%;
-    margin:120px auto;
-    padding:30px;
-    border-radius:10px;
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
-    animation:popup .35s;
-}
-
-@keyframes popup{
-    from{ transform:scale(.8); opacity:0; }
-    to{ transform:scale(1); opacity:1; }
-}
 
 footer {
     background: #182E5A;
@@ -795,6 +463,7 @@ footer {
     box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
 }
 
+/* [FLEXBOX]: Centers footer content vertically using column direction */
 .footer-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -830,167 +499,34 @@ footer {
     color: #A0B2D6;
 }
 
-/* ==================================================
-             🔥 PERFECT DARK MODE FIX 🔥
-================================================== */
+/*==================================================
+        RESPONSIVE MEDIA QUERIES (FLEXBOX ADAPTATION)
+==================================================*/
 
-body.dark {
-    background: #121212 !important;
-    color: #ffffff !important;
+/* [FLEXBOX RESPONSIVE]: Changes flex directions to column for smaller screen sizes */
+@media (max-width:992px){
+    .top{ flex-direction:column; text-align:center; }
+    .logo{ justify-content:center; margin-bottom:20px; }
+    .logo img{ margin-right:0; margin-bottom:10px; }
+    nav{ flex-wrap:wrap; justify-content:center; }
+    nav a{ font-size:15px; padding:8px 12px; }
 }
 
-body.dark .theme-btn {
-    background: #FFD54F !important;
-    color: #222222 !important;
-    border-color: #FFD54F !important;
+@media (max-width:768px){
+    header { padding: 25px 0; }
+    .logo h1{ font-size:38px; }
+    .logo h3{ font-size:18px; }
+    .logo img{ width:85px; height:85px; }
+    .card{ margin-bottom:20px; }
+    .card h2{ font-size:22px; }
+    .carousel-item { height: 260px; }
 }
 
-body.dark .card,
-body.dark .dashboard-card,
-body.dark .profile-card,
-body.dark .event-card,
-body.dark .modal-content {
-    background-color: #1e293b !important;
-    background: #1e293b !important;
-    color: #ffffff !important;
-    border: 1px solid #334155 !important;
-}
-
-body.dark .card p,
-body.dark .card address,
-body.dark .card ul,
-body.dark .card ol,
-body.dark .card li,
-body.dark .card h2,
-body.dark .card h3 {
-    color: #ffffff !important;
-}
-
-body.dark .faq-btn {
-    background-color: #0f172a !important;
-    background: #0f172a !important;
-    color: #ffffff !important;
-    border-bottom: 1px solid #334155 !important;
-}
-
-body.dark .faq-btn:hover {
-    background-color: #1e293b !important;
-    color: #38bdf8 !important;
-}
-
-body.dark .faq-btn span {
-    color: #38bdf8 !important;
-}
-
-body.dark .faq-answer {
-    background-color: #1e293b !important;
-    background: #1e293b !important;
-    border-left: 5px solid #38bdf8 !important;
-    border-bottom: 1px solid #334155 !important;
-}
-
-body.dark .faq-answer p {
-    color: #ffffff !important;
-    font-weight: 500;
-}
-
-body.dark input,
-body.dark textarea,
-body.dark select {
-    background: #2A2A2A !important;
-    color: white !important;
-    border: 1px solid #555 !important;
-}
-
-body.dark table {
-    background: #1F1F1F !important;
-}
-
-body.dark td {
-    color: white !important;
-}
-
-body.dark tr:nth-child(even) {
-    background: #2A2A2A !important;
-}
-
-body.dark footer {
-    background: #0E1B37 !important;
-}
-
-body.dark label,
-body.dark .form-group label,
-body.dark form label {
-    color: #ffffff !important;
-}
-
-body.dark .error-msg {
-    color: #f87171 !important;
-}
-
-body.dark .success-display {
-    color: #4ade80 !important;
-}
-
-/* Modal Styling */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.modal-content {
-    background-color: #ffffff;
-    margin: 15% auto;
-    padding: 25px;
-    border-radius: 10px;
-    width: 90%;
-    max-width: 450px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-body.dark .modal-content {
-    background-color: #1e293b;
-    color: #ffffff;
-}
-
-/* ==============================
-   PASSWORD STRENGTH
-============================== */
-
-.password-strength {
-
-    margin-top: 6px;
-
-    font-size: 14px;
-
-    font-weight: 600;
-
-}
-
-
-.password-strength.weak {
-
-    color: #DC2626;
-
-}
-
-
-.password-strength.medium {
-
-    color: #D97706;
-
-}
-
-
-.password-strength.strong {
-
-    color: #16A34A;
-
+@media (max-width:480px){
+    .container{ width:96%; }
+    .logo h1{ font-size:28px; }
+    .logo h3{ font-size:16px; }
+    .card{ padding:18px; }
+    .card h2{ font-size:20px; }
+    .carousel-item { height: 200px; }
 }

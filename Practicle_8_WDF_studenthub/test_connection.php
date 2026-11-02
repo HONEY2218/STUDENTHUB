@@ -18,3 +18,24 @@ foreach ($students as $student) {
     echo "<hr>";
 }
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

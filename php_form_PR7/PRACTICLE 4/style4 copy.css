@@ -1,0 +1,2113 @@
+/*==================================================
+            STUDENTHUB NEW THEME (PART-1)
+==================================================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Segoe UI',Tahoma,sans-serif;
+
+    background:#F4F6F9;
+
+    color:#333;
+
+    transition:.4s;
+
+}
+
+/*==================== CONTAINER ====================*/
+
+.container{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+/*==================== HEADER ====================*/
+/*==================== HEADER (BIGGER & PREMIUM LOOK) ====================*/
+
+/* ✅ આ નવો EXTRA LONG HEADER કોડ ત્યાં પેસ્ટ કરી દો: */
+
+/*==================== HEADER (EXTRA LONG & HIGHLIGHTED) ====================*/
+
+header {
+    background: linear-gradient(135deg, #182E5A, #1F3B73);
+    min-height: 220px; /* હેડર સેક્શનની લંબાઈ (Height) મોટી કરવા માટે */
+    display: flex;
+    align-items: center; /* અંદરના કન્ટેન્ટને વર્ટિકલી સેન્ટર રાખવા */
+    padding: 30px 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+    border-bottom: 4px solid #2098D1;
+}
+
+/*==================== TOP ====================*/
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/*==================== LOGO & MAIN TITLE ====================*/
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    width: 130px; /* સેક્શન મોટો થયો હોવાથી લોગોની સાઈઝ પણ મોટી કરી */
+    height: 130px;
+    border-radius: 50%;
+    background: white;
+    padding: 8px;
+    margin-right: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .30);
+    border: 3px solid #2098D1;
+    transition: transform .35s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.logo h1 {
+    font-size: 68px; /* StudentHub નો ટાઈટલ ફૉન્ટ પણ મોટો અને બોલ્ડ કર્યો */
+    color: #FFFFFF;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, .35);
+    line-height: 1.1;
+}
+
+.logo h3 {
+    margin-top: 10px;
+    color: #E0E9F8;
+    font-size: 28px;
+    font-weight: 500;
+    letter-spacing: 0.8px;
+}
+
+/*==================== THEME BUTTON ====================*/
+
+.theme-btn{
+
+    padding:12px 24px;
+
+    border:none;
+
+    border-radius:30px;
+
+    background:#2E86DE;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.theme-btn:hover{
+
+    background:#4AA3FF;
+
+}
+
+/*==================== NAVIGATION ====================*/
+
+.nav-section{
+
+    background:#294B8A;
+
+    box-shadow:0 3px 10px rgba(0,0,0,.15);
+
+}
+
+nav{
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:15px 0;
+
+    flex-wrap:wrap;
+
+}
+
+nav a{
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:10px 16px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    border-radius:5px;
+
+    transition:.3s;
+
+}
+
+nav a:hover{
+
+    background:#3F79D6;
+
+}
+
+/*==================================================
+            STUDENTHUB NEW THEME (PART-2)
+        MAIN • CARDS • TITLES • CONTENT
+==================================================*/
+
+/*==================== MAIN ====================*/
+
+main{
+
+    width:92%;
+
+    max-width:1400px;
+
+    margin:35px auto;
+
+}
+
+/*==================== CARD ====================*/
+
+.card{
+
+    background:white;
+
+    border-radius:10px;
+
+    margin-bottom:30px;
+
+    overflow:hidden;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.12);
+
+    border:1px solid #E3E8EF;
+
+}
+
+/*==================== CARD TITLE ====================*/
+
+.card h2{
+
+    background:#2098D1;
+
+    color:white;
+
+    font-size:28px;
+
+    font-weight:600;
+
+    padding:18px 25px;
+
+    margin:0;
+
+    border:none;
+
+}
+
+/*==================== CARD CONTENT ====================*/
+
+.card p,
+
+.card address,
+
+.card ul,
+
+.card ol{
+
+    padding:25px;
+
+    font-size:18px;
+
+    line-height:1.8;
+
+    color:#1d1a1a;
+
+}
+
+/*==================== CONTACT CARD COMPACT FIX ====================*/
+
+.contact-card {
+    padding: 0 !important;
+    overflow: hidden;
+}
+
+.contact-card h2 {
+    margin: 0 !important;
+    padding: 8px 15px !important; /* ઉપરની બ્લુ પટ્ટી પતલી કરી */
+    font-size: 18px !important;
+}
+
+.contact-info {
+    padding: 10px 15px !important; /* અંદરનું બોક્સ નાનું કર્યું */
+}
+
+.contact-info h3 {
+    margin: 0 0 4px 0 !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    color: #1F3B73 !important;
+}
+
+.contact-info p {
+    margin: 2px 0 !important; /* Email, Phone, Address વચ્ચેની જગ્યા ઓછી કરી */
+    padding: 0 !important;
+    font-size: 14px !important;
+    color: #333 !important;
+    line-height: 1.2 !important; /* લાઈનો એકદમ પાસ-પાસે લાવવા માટે */
+}
+
+/*==================== SERVICES SECTION ALIGNMENT FIX ====================*/
+
+.services {
+    padding: 25px; 
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+}
+
+.service {
+    margin-bottom: 5px;
+}
+
+.service h3 {
+    color: #1F3B73;
+    font-size: 22px;
+    margin-bottom: 8px; 
+    padding: 0; 
+}
+
+.service p {
+    padding: 0 !important; 
+    font-size: 17px;
+    color: #444;
+    line-height: 1.6;
+}
+
+/*==================== WELCOME SECTION ====================*/
+
+.welcome-box{
+
+    background:white;
+
+    border-left:6px solid #2098D1;
+
+    padding:35px;
+
+    border-radius:10px;
+
+    margin-bottom:30px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.10);
+
+}
+
+.welcome-box h2{
+
+    color:#1F3B73;
+
+    background:none;
+
+    padding:0;
+
+    font-size:42px;
+
+    margin-bottom:18px;
+
+}
+
+.welcome-box p{
+
+    padding:0;
+
+    font-size:20px;
+
+    color:#555;
+
+}
+
+/*==================== SECTION SPACING ====================*/
+
+section{
+
+    margin-bottom:35px;
+
+}
+
+/*==================== SUB HEADING ====================*/
+
+h3{
+
+    color:#1F3B73;
+
+    margin-bottom:15px;
+
+}
+
+/*==================== HORIZONTAL LINE ====================*/
+
+hr{
+
+    border:none;
+
+    border-top:1px solid #D8DEE8;
+
+    margin:30px 0;
+
+}
+
+/*==================== LINKS ====================*/
+
+a{
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    text-decoration:none;
+
+}
+
+/*==================== ADDRESS ====================*/
+
+address{
+
+    font-style:normal;
+
+    line-height:2;
+
+}
+
+/*==================== RESPONSIVE ====================*/
+
+@media(max-width:768px){
+
+.card h2{
+
+font-size:22px;
+
+}
+
+.welcome-box h2{
+
+font-size:30px;
+
+}
+
+.card p,
+
+.card address{
+
+font-size:16px;
+
+}
+
+}
+
+/*==================================================
+            STUDENTHUB NEW THEME (PART-3)
+        BUTTONS • FAQ • CONTACT BUTTON
+==================================================*/
+
+/*==================== ALL BUTTONS ====================*/
+
+button{
+
+    font-family:'Segoe UI',sans-serif;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+    border:none;
+
+    outline:none;
+
+}
+
+/*==================== FAQ BUTTON ====================*/
+
+.faq-btn{
+
+    width:100%;
+
+    background:white;
+
+    color:#1F3B73;
+
+    padding:18px 22px;
+
+    margin:0;
+
+    border:none;
+
+    border-bottom:1px solid #dcf0df;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.faq-btn:hover{
+
+    background:#F4F9FF;
+
+    color:#2098D1;
+
+    padding-left:30px;
+
+}
+
+/*==================== FAQ ANSWER ====================*/
+
+.faq-answer{
+
+    display:none;
+    background:#FAFCFF;
+    padding:20px 25px;
+    color:#444;
+    font-size:18px;
+    font-weight:500;
+    line-height:1.8;
+    opacity:1;
+    border-left:5px solid #2098D1;
+    border-bottom:1px solid #E3E8EF;
+
+}
+
+/*==================== PLUS ICON ====================*/
+
+.faq-btn span{
+
+    font-size:22px;
+
+    color:#2098D1;
+
+    font-weight:bold;
+
+}
+
+/*==================== CONTACT BUTTON ====================*/
+
+.contact-btn,
+
+#openModal{
+
+    background:#2098D1;
+
+    color:white;
+
+    padding:14px 30px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    border-radius:6px;
+
+    transition:.3s;
+
+}
+
+.contact-btn:hover,
+
+#openModal:hover{
+
+    background:#1B7FB0;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 6px 15px rgba(0,0,0,.18);
+
+}
+
+/*==================== CLOSE BUTTON ====================*/
+
+#closeModal{
+
+    background:#1F3B73;
+
+    color:white;
+
+    padding:12px 24px;
+
+    border-radius:6px;
+
+    transition:.3s;
+
+}
+
+#closeModal:hover{
+
+    background:#294B8A;
+
+}
+
+/*==================== THEME BUTTON ====================*/
+
+/*==================== SMALL & TOP-RIGHT THEME BUTTON ====================*/
+
+/* ૧. હેડરને પોઝિશન Relative આપવું જેથી બટન ખૂણામાં સેટ થઈ શકે */
+header {
+    position: relative;
+}
+
+/* ૨. નાનું અને સ્લીમ બટન - Top Right ખૂણામાં ગોઠવણી */
+.theme-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    padding: 6px 14px;         /* નાની પેડિંગ જેથી બટન પતલું રહે */
+    font-size: 13px;            /* નાના અને ક્લીન ફૉન્ટ */
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;       /* ગોળ કેપ્સ્યુલ લુક */
+    background: rgba(255, 255, 255, 0.15); /* ટ્રાન્સપરન્ટ ટાઈપ ફેન્સી લુક */
+    color: #FFFFFF;
+    cursor: pointer;
+    white-space: nowrap;       /* લાઈન બ્રેક ન થાય તે માટે */
+    backdrop-filter: blur(5px);
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.theme-btn:hover {
+    background: #2098D1;
+    border-color: #2098D1;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark Mode ચાલુ હોય ત્યારે બટનનો કલર અલગ દેખાય */
+body.dark .theme-btn {
+    background: #FFD54F;
+    color: #222222;
+    border-color: #FFD54F;
+}
+
+body.dark .theme-btn:hover {
+    background: #FFC107;
+}
+
+/*==================== NORMAL BUTTON ====================*/
+
+.btn{
+
+    background:#2098D1;
+
+    color:white;
+
+    padding:12px 25px;
+
+    border-radius:6px;
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.btn:hover{
+
+    background:#1B7FB0;
+
+}
+
+/*==================================================
+            STUDENTHUB NEW THEME (PART-4)
+         FORMS • INPUTS • LOGIN • REGISTER
+==================================================*/
+
+/*==================== FORM ====================*/
+/*==================== FORM FIX ====================*/
+
+form {
+    width: 100%;
+    padding: 25px; 
+}
+/*==================== LABEL ====================*/
+
+label{
+
+    display:block;
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    color:#1F3B73;
+
+}
+
+/*==================== INPUT ====================*/
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=number],
+input[type=date],
+input[type=tel],
+input[type=file],
+select,
+textarea{
+
+    width:100%;
+
+    padding:14px 16px;
+
+    border:1px solid #C8D3E0;
+
+    border-radius:6px;
+
+    font-size:16px;
+
+    background:white;
+
+    transition:.3s;
+
+}
+
+/*==================== INPUT FOCUS ====================*/
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    outline:none;
+
+    border-color:#2098D1;
+
+    box-shadow:0 0 8px rgba(32,152,209,.25);
+
+}
+
+/*==================== TEXTAREA ====================*/
+
+textarea{
+
+    resize:vertical;
+
+    min-height:120px;
+
+}
+
+/*==================== PLACEHOLDER ====================*/
+
+::placeholder{
+
+    color:#999;
+
+}
+
+/*==================== RADIO & CHECKBOX ====================*/
+
+input[type=radio],
+input[type=checkbox]{
+
+    margin-right:8px;
+
+    transform:scale(1.15);
+
+    accent-color:#2098D1;
+
+}
+
+/*==================== SUBMIT BUTTON ====================*/
+
+input[type=submit],
+input[type=reset]{
+
+    background:#2098D1;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 30px;
+
+    border-radius:6px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    margin-top:25px;
+
+    margin-right:10px;
+
+    transition:.3s;
+
+}
+
+input[type=submit]:hover,
+input[type=reset]:hover{
+
+    background:#1B7FB0;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 5px 12px rgba(0,0,0,.15);
+
+}
+
+/*==================== FORM ROW ====================*/
+
+.form-row{
+
+    display:flex;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.form-group{
+
+    flex:1;
+
+    min-width:250px;
+
+}
+
+/*==================== LOGIN BOX ====================*/
+
+.login-box{
+
+    max-width:500px;
+
+    margin:auto;
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+/*==================== REGISTER BOX ====================*/
+
+.register-box{
+
+    background:white;
+
+    padding:35px;
+
+    border-radius:10px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+}
+
+/*==================== RESPONSIVE ====================*/
+
+@media(max-width:768px){
+
+.form-row{
+
+display:block;
+
+}
+
+input,
+select,
+textarea{
+
+font-size:15px;
+
+}
+
+}
+
+/*==================================================
+            STUDENTHUB NEW THEME (PART-5)
+            TABLES • RESULT • FEES
+==================================================*/
+
+/*==================== TABLE ====================*/
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+    margin-top:25px;
+
+    background:white;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+}
+
+/*==================== TABLE HEADER ====================*/
+
+th{
+
+    background:#1F3B73;
+
+    color:white;
+
+    padding:16px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    text-align:center;
+
+}
+
+/*==================== TABLE DATA ====================*/
+/*==================== TABLE HEADER & DATA BORDER FIX ====================*/
+
+th{
+
+    background:#1F3B73;
+
+    color:white;
+
+    padding:16px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    text-align:center;
+
+    border-bottom:1px solid rgba(255, 255, 255, 0.2); /* ડાર્ક બ્લુમાં આછી લાઈન */
+
+}
+
+td{
+
+    padding:14px;
+
+    border-bottom:1px solid #E2E8F0; /* સફેદ ભાગમાં આછી ગ્રે લાઈન */
+
+    text-align:center;
+
+    font-size:15px;
+
+}
+
+/*==================== ALTERNATE ROW ====================*/
+
+tr:nth-child(even){
+
+    background:#F7FAFC;
+
+}
+
+/*==================== ROW HOVER ====================*/
+
+tr:hover{
+
+    background:#E8F4FF;
+
+}
+
+/*==================== TABLE CAPTION ====================*/
+
+caption{
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    color:#1F3B73;
+
+    margin-bottom:15px;
+
+}
+
+/*==================== RESULT STATUS ====================*/
+
+.pass{
+
+    color:#16A34A;
+
+    font-weight:bold;
+
+}
+
+.fail{
+
+    color:#DC2626;
+
+    font-weight:bold;
+
+}
+
+.pending{
+
+    color:#D97706;
+
+    font-weight:bold;
+
+}
+
+/*==================== FEES STATUS ====================*/
+
+.paid{
+
+    color:#16A34A;
+
+    font-weight:bold;
+
+}
+
+.unpaid{
+
+    color:#DC2626;
+
+    font-weight:bold;
+
+}
+
+/*==================== RESPONSIVE TABLE ====================*/
+
+.table-container{
+
+    overflow-x:auto;
+
+}
+
+/*==================== MOBILE ====================*/
+
+@media(max-width:768px){
+
+table{
+
+font-size:14px;
+
+}
+
+th,
+
+td{
+
+padding:10px;
+
+}
+
+}
+
+/*==================================================
+        STUDENTHUB NEW THEME (PART-6)
+    DASHBOARD • PROFILE • EVENT • INFO CARDS
+==================================================*/
+
+/*==================== DASHBOARD GRID ====================*/
+
+.dashboard-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+    gap:25px;
+
+    margin-top:25px;
+
+}
+
+/*==================== DASHBOARD CARD ====================*/
+
+.dashboard-card{
+
+    background:white;
+
+    border-radius:10px;
+
+    padding:30px;
+
+    text-align:center;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+    border-top:5px solid #2098D1;
+
+    transition:.3s;
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 10px 22px rgba(0,0,0,.18);
+
+}
+
+.dashboard-card h3{
+
+    color:#1F3B73;
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+}
+
+.dashboard-card p{
+
+    font-size:18px;
+
+    color:#666;
+
+}
+
+/*==================== PROFILE CARD ====================*/
+
+.profile-card{
+
+    background:white;
+
+    border-radius:10px;
+
+    padding:30px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.12);
+
+    text-align:center;
+
+}
+
+.profile-card img{
+
+    width:130px;
+
+    height:130px;
+
+    border-radius:50%;
+
+    border:4px solid #2098D1;
+
+    margin-bottom:20px;
+
+}
+
+.profile-card h2{
+
+    background:none;
+
+    color:#1F3B73;
+
+    padding:0;
+
+    margin-bottom:10px;
+
+}
+
+.profile-card p{
+
+    padding:0;
+
+    color:#666;
+
+}
+
+/*==================== EVENT CARD ====================*/
+
+.event-card{
+
+    background:white;
+
+    border-left:6px solid #2098D1;
+
+    border-radius:10px;
+
+    padding:25px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 4px 12px rgba(0,0,0,.10);
+
+    transition:.3s;
+
+}
+
+.event-card:hover{
+
+    transform:translateX(6px);
+
+}
+
+.event-card h3{
+
+    color:#1F3B73;
+
+    margin-bottom:10px;
+
+}
+
+.event-card p{
+
+    padding:0;
+
+    color:#555;
+
+}
+
+/*==================== INFORMATION BOX ====================*/
+
+.info-box{
+
+    background:#EAF5FF;
+
+    border-left:5px solid #2098D1;
+
+    padding:20px;
+
+    border-radius:8px;
+
+    margin:20px 0;
+
+}
+
+.info-box h3{
+
+    color:#1F3B73;
+
+    margin-bottom:10px;
+
+}
+
+.info-box p{
+
+    padding:0;
+
+}
+
+/*==================== SUCCESS BOX ====================*/
+
+.success-box{
+
+    background:#E8F8EC;
+
+    border-left:5px solid #16A34A;
+
+    padding:18px;
+
+    border-radius:8px;
+
+    margin:20px 0;
+
+}
+
+/*==================== WARNING BOX ====================*/
+
+.warning-box{
+
+    background:#FFF8E6;
+
+    border-left:5px solid #D97706;
+
+    padding:18px;
+
+    border-radius:8px;
+
+    margin:20px 0;
+
+}
+
+/*==================== ERROR BOX ====================*/
+
+.error-box{
+
+    background:#FDECEC;
+
+    border-left:5px solid #DC2626;
+
+    padding:18px;
+
+    border-radius:8px;
+
+    margin:20px 0;
+
+}
+
+/*==================================================
+        STUDENTHUB NEW THEME (PART-7)
+NOTIFICATION • SLIDER • MODAL • FOOTER • DARK MODE
+==================================================*/
+
+/*==================== NOTIFICATION ====================*/
+
+.banner{
+
+    background:#FFD54F;
+
+    color:#222;
+
+    padding:14px 20px;
+
+    text-align:center;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    position:relative;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.15);
+
+}
+
+.banner span{
+
+    position:absolute;
+
+    right:20px;
+
+    top:10px;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+}
+
+/*==================== SLIDER ====================*/
+
+.slider{
+
+    background:linear-gradient(135deg,#1F3B73,#2C82C9);
+
+    color:white;
+
+    text-align:center;
+
+    padding:45px;
+
+    border-radius:10px;
+
+    font-size:32px;
+
+    font-weight:600;
+
+    margin-bottom:30px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.18);
+
+}
+
+/*==================== MODAL ====================*/
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.55);
+
+    z-index:1000;
+
+}
+
+.modal-content{
+
+    background:white;
+
+    width:420px;
+
+    max-width:90%;
+
+    margin:120px auto;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+    animation:popup .35s;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.8);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+/*==================== FOOTER ====================*/
+
+footer {
+    background: #182E5A;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 45px 20px;
+    margin-top: 50px;
+    width: 100%;
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content h2 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #FFFFFF;
+    letter-spacing: 0.5px;
+}
+
+.footer-content p {
+    font-size: 16px;
+    color: #D8E2F2;
+    margin: 4px 0;
+}
+
+.footer-content .email {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: #E0E9F8;
+}
+
+.footer-content .copyright {
+    font-size: 14px;
+    color: #A0B2D6;
+}
+
+footer h2{
+
+    color:white;
+
+    margin-bottom:10px;
+
+}
+
+footer p{
+
+    color:#E0E0E0;
+
+    line-height:1.8;
+
+}
+
+/*==================== DARK MODE ====================*/
+
+body.dark{
+
+    background:#121212;
+
+    color:white;
+
+}
+
+body.dark .card,
+
+body.dark .dashboard-card,
+
+body.dark .profile-card,
+
+body.dark .event-card,
+
+body.dark .modal-content{
+
+    background:#1F1F1F;
+
+    color:white;
+
+}
+
+body.dark .card p,
+body.dark .card address,
+body.dark .card ul,
+body.dark .card ol,
+body.dark .card li {
+    color: #E2E8F0 !important;
+
+body.dark .faq-btn{
+
+    background:#1E2635;
+
+    color:#F3F6FA;
+
+}
+
+body.dark .faq-btn:hover{
+
+    background:#2A3448;
+
+    color:#6EC6FF;
+
+}
+
+body.dark .faq-answer{
+
+    background:#2C3547;
+    color:#B8E3FF !important;
+    font-size:18px;
+    font-weight:600;
+    line-height:1.8;
+    opacity:1 !important;
+    border-left:5px solid #4DA3FF;
+
+}
+
+body.dark input,
+
+body.dark textarea,
+
+body.dark select{
+
+    background:#2A2A2A;
+
+    color:white;
+
+    border:1px solid #555;
+
+}
+
+body.dark table{
+
+    background:#1F1F1F;
+
+}
+
+body.dark td{
+
+    color:white;
+
+}
+
+body.dark tr:nth-child(even){
+
+    background:#2A2A2A;
+
+}
+
+body.dark footer{
+
+    background:#0E1B37;
+
+}
+
+/*==================================================
+        STUDENTHUB NEW THEME (PART-8)
+      RESPONSIVE • NAVIGATION • MOBILE VIEW
+==================================================*/
+
+/*==================== DESKTOP ====================*/
+
+@media (min-width:1200px){
+
+.container{
+
+max-width:1400px;
+
+}
+
+.logo h1{
+
+font-size:60px;
+
+}
+
+.logo h3{
+
+font-size:26px;
+
+}
+
+nav{
+
+justify-content:center;
+
+gap:12px;
+
+}
+
+}
+
+/*==================== LAPTOP ====================*/
+
+@media (max-width:1199px){
+
+.logo h1{
+
+font-size:48px;
+
+}
+
+.logo h3{
+
+font-size:22px;
+
+}
+
+nav{
+
+gap:8px;
+
+}
+
+nav a{
+
+font-size:15px;
+
+padding:8px 10px;
+
+}
+
+}
+
+/*==================== TABLET ====================*/
+
+@media (max-width:992px){
+
+.top{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+.logo{
+
+justify-content:center;
+
+margin-bottom:20px;
+
+}
+
+.logo img{
+
+margin-right:0;
+
+margin-bottom:10px;
+
+}
+
+.theme-btn{
+
+margin-top:15px;
+
+}
+
+nav{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+nav a{
+
+font-size:15px;
+
+padding:8px 12px;
+
+}
+
+.slider{
+
+font-size:26px;
+
+padding:35px;
+
+}
+
+}
+
+/*==================== MOBILE ====================*/
+
+/* ✅ આ નવો મોબાઈલ રિસ્પોન્સિવ કોડ ત્યાં પેસ્ટ કરી દો: */
+
+@media (max-width:768px){
+
+header {
+    padding: 25px 0; /* મોબાઈલ સ્ક્રીનમાં હેડરની સ્પેસ માપસર રહેશે */
+}
+
+.menu{
+    display:block;
+    font-size:34px;
+    color:white;
+    cursor:pointer;
+    text-align:center;
+    padding:15px;
+}
+
+.nav-section{
+    padding:0;
+}
+
+nav{
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    width:100%;
+    background:#294B8A;
+}
+
+nav.active{
+    display:flex;
+}
+
+nav a{
+    width:100%;
+    padding:14px;
+    text-align:center;
+    border-bottom:1px solid rgba(255,255,255,.15);
+}
+
+.logo h1{
+    font-size:38px; /* મોબાઈલમાં લુક બગડે નહીં એટલે પ્રોપોશનલ સાઈઝ */
+}
+
+.logo h3{
+    font-size:18px;
+}
+
+.logo img{
+    width:85px;
+    height:85px;
+}
+
+.card{
+    margin-bottom:20px;
+}
+
+.card h2{
+    font-size:22px;
+}
+
+.slider{
+    font-size:22px;
+    padding:25px;
+}
+
+.modal-content{
+    width:92%;
+    margin:80px auto;
+}
+
+}
+
+/*==================== SMALL MOBILE ====================*/
+
+@media (max-width:480px){
+
+.container{
+
+width:96%;
+
+}
+
+.logo h1{
+
+font-size:28px;
+
+}
+
+.logo h3{
+
+font-size:16px;
+
+}
+
+.theme-btn{
+
+padding:10px 16px;
+
+font-size:14px;
+
+}
+
+.card{
+
+padding:18px;
+
+}
+
+.card h2{
+
+font-size:20px;
+
+}
+
+.slider{
+
+font-size:18px;
+
+padding:20px;
+
+}
+
+.faq-btn{
+
+font-size:16px;
+
+padding:15px;
+
+}
+
+button{
+
+font-size:15px;
+
+}
+
+table{
+
+font-size:13px;
+
+}
+
+}
+
+/*==================================================
+        STUDENTHUB NEW THEME (PART-9)
+      FINAL PREMIUM FINISHING
+==================================================*/
+
+/*==================== SMOOTH ANIMATION ====================*/
+
+*{
+
+transition:all .3s ease;
+
+}
+
+/*==================== CARD HOVER ====================*/
+
+.card,
+.dashboard-card,
+.profile-card,
+.event-card{
+
+transition:.35s;
+
+}
+
+.card:hover,
+.dashboard-card:hover,
+.profile-card:hover,
+.event-card:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 10px 25px rgba(0,0,0,.18);
+
+}
+
+/*==================== IMAGE EFFECT ====================*/
+
+img{
+
+transition:.35s;
+
+}
+
+img:hover{
+
+transform:scale(1.03);
+
+}
+
+/*==================== BUTTON EFFECT ====================*/
+
+button,
+input[type=submit],
+input[type=reset],
+.btn{
+
+transition:.3s;
+
+}
+
+button:hover,
+input[type=submit]:hover,
+input[type=reset]:hover,
+.btn:hover{
+
+transform:translateY(-2px);
+
+box-shadow:0 6px 15px rgba(0,0,0,.18);
+
+}
+
+/*==================== TABLE EFFECT ====================*/
+
+table{
+
+transition:.3s;
+
+}
+
+table:hover{
+
+box-shadow:0 10px 20px rgba(0,0,0,.15);
+
+}
+
+/*==================== INPUT EFFECT ====================*/
+
+input,
+select,
+textarea{
+
+transition:.3s;
+
+}
+
+input:hover,
+select:hover,
+textarea:hover{
+
+border-color:#2098D1;
+
+}
+
+/*==================== CUSTOM SCROLLBAR ====================*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#E6EEF7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#1F3B73;
+
+border-radius:10px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#2C82C9;
+
+}
+
+/*==================== SELECTION ====================*/
+
+::selection{
+
+background:#2C82C9;
+
+color:white;
+
+}
+
+/*==================== SHADOW ====================*/
+
+.card,
+.dashboard-card,
+.profile-card,
+.event-card,
+table,
+.modal-content{
+
+box-shadow:0 5px 18px rgba(0,0,0,.12);
+
+}
+
+/*==================== PAGE ANIMATION ====================*/
+
+body{
+
+animation:fadePage .5s;
+
+}
+
+@keyframes fadePage{
+
+from{
+
+opacity:0;
+
+transform:translateY(10px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/*==================== FOOTER LINK ====================*/
+
+footer a{
+
+color:#D9E9FF;
+
+text-decoration:none;
+
+}
+
+footer a:hover{
+
+color:white;
+
+text-decoration:underline;
+
+}
+
+/*==================== FINAL TOUCH ====================*/
+
+.card h2,
+.dashboard-card h3,
+.profile-card h2,
+.event-card h3{
+
+letter-spacing:.4px;
+
+}
+
+.card{
+
+overflow:hidden;
+
+}
+
+/* ======================================
+   DARK MODE COMPLETE FIX FOR FAQ & CARDS
+====================================== */
+
+/* 1. બધા કાર્ડ્સનું બેકગ્રાઉન્ડ એકસરખું ડાર્ક કરશે */
+body.dark .card,
+body.dark .card.contact-card {
+    background-color: #1e293b !important;
+    background: #1e293b !important;
+    color: #ffffff !important;
+    border: 1px solid #334155 !important;
+}
+
+/* 2. FAQ વાળા બોક્સ અને બટનનું બેકગ્રાઉન્ડ ડાર્ક કરશે */
+body.dark .faq-btn {
+    background-color: #0f172a !important;
+    background: #0f172a !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid #334155 !important;
+}
+
+body.dark .faq-btn span {
+    color: #38bdf8 !important; /* '+' અને '-' આઈકનનો કલર લાઈટ બ્લુ રહેશે */
+}
+
+/* 3. FAQ ના આન્સરનું બેકગ્રાઉન્ડ ડાર્ક અને લખાણ એકદમ ક્લિયર સફેદ કરશે */
+body.dark .faq-answer {
+    background-color: #1e293b !important;
+    background: #1e293b !important;
+    border-left: 4px solid #38bdf8 !important;
+}
+
+body.dark .faq-answer p,
+body.dark .card p,
+body.dark .card h2,
+body.dark .card h3 {
+    color: #ffffff !important; /* બધા લખાણ માટે સફેદ કલર */
+}
