@@ -1,0 +1,125 @@
+
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Hackathon 2026",
+      "date": "2026-11-10",
+      "venue": "Computer Lab",
+      "category": "Technical",
+      "description": "A coding competition where students develop innovative solutions."
+    },
+    {
+      "id": 2,
+      "title": "Sports Competition",
+      "date": "2026-11-15",
+      "venue": "College Ground",
+      "category": "Sports",
+      "description": "Students participate in different outdoor sports activities."
+    },
+    {
+      "id": 3,
+      "title": "Cultural Fest",
+      "date": "2026-11-20",
+      "venue": "University Auditorium",
+      "category": "Cultural",
+      "description": "A celebration of student talent, music, dance and art."
+    },
+    {
+      "id": 4,
+      "title": "Web Development Workshop",
+      "date": "2026-11-25",
+      "venue": "Seminar Hall",
+      "category": "Workshop",
+      "description": "Learn modern frontend development technologies."
+    },
+    {
+      "id": 5,
+      "title": "Java Programming Contest",
+      "date": "2026-12-01",
+      "venue": "Computer Lab 2",
+      "category": "Technical",
+      "description": "Test Java programming and problem-solving skills."
+    },
+    {
+      "id": 6,
+      "title": "Cricket Tournament",
+      "date": "2026-12-05",
+      "venue": "College Ground",
+      "category": "Sports",
+      "description": "An inter-department cricket tournament."
+    },
+    {
+      "id": 7,
+      "title": "Dance Competition",
+      "date": "2026-12-10",
+      "venue": "University Auditorium",
+      "category": "Cultural",
+      "description": "Students showcase their dance performances."
+    },
+    {
+      "id": 8,
+      "title": "Cyber Security Seminar",
+      "date": "2026-12-15",
+      "venue": "Seminar Hall",
+      "category": "Workshop",
+      "description": "Understand cybersecurity concepts and online safety."
+    },
+    {
+      "id": 9,
+      "title": "Code Debugging Challenge",
+      "date": "2026-12-20",
+      "venue": "Computer Lab 1",
+      "category": "Technical",
+      "description": "Find and solve errors in programming code."
+    },
+    {
+      "id": 10,
+      "title": "Football Tournament",
+      "date": "2026-12-25",
+      "venue": "College Ground",
+      "category": "Sports",
+      "description": "An exciting football competition for students."
+    },
+    {
+      "id": 11,
+      "title": "Photography Exhibition",
+      "date": "2027-01-05",
+      "venue": "Art Gallery",
+      "category": "Cultural",
+      "description": "Display creative photographs captured by students."
+    },
+    {
+      "id": 12,
+      "title": "AI and Machine Learning Workshop",
+      "date": "2027-01-10",
+      "venue": "Seminar Hall",
+      "category": "Workshop",
+      "description": "Introduction to Artificial Intelligence and Machine Learning."
+    },
+    {
+      "id": 13,
+      "title": "Python Coding Competition",
+      "date": "2027-01-15",
+      "venue": "Computer Lab 2",
+      "category": "Technical",
+      "description": "Solve programming problems using Python."
+    },
+    {
+      "id": 14,
+      "title": "Badminton Championship",
+      "date": "2027-01-20",
+      "venue": "Indoor Sports Hall",
+      "category": "Sports",
+      "description": "A badminton championship for college students."
+    },
+    {
+      "id": 15,
+      "title": "Annual College Celebration",
+      "date": "2027-01-25",
+      "venue": "University Auditorium",
+      "category": "Cultural",
+      "description": "An annual celebration featuring student performances."
+    }
+  ]
+}

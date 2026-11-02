@@ -1,0 +1,33 @@
+# Local configuration
+.env
+.env.*
+
+# Backup files
+/backup_root/
+*.bak
+*.tmp
+
+# Logs
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editor settings
+.vscode/
+
+# Local database configuration
+/db.php
+/mysqli_db.php
+
+# Temporary testing scripts
+/db_test.php
+/mysqli_test.php
+/pdo_test.php
+/test.php
+/reset_session.php
+/seed_students.php
+/database/studenthub_25cs063.sql
+/database/StudentHub_Students.csv
+/data/students.csv
